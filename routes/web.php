@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/agent-registration', [FrontendController::class, 'agent_reg'])->name('agent-reg');
+Route::get('/bus-routes', [FrontendController::class, 'bus_routes'])->name('bus-routes');
+Route::get('/search-bus', [FrontendController::class, 'bus_search'])->name('bus-search');
+Route::get('/privacy-policy', [FrontendController::class, 'privacy'])->name('privacy');
+Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
