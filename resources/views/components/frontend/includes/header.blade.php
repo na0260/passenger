@@ -57,12 +57,12 @@
                 >
                     <nav class="cl-effect-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="routes.html">Routes</a></li>
-                            <li><a href="agent.html">Agent Registration</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Use</a></li>
+                            <li class="{{ Route::currentRouteName() == 'home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
+                            <li class="{{ Route::currentRouteName() == 'about' ? 'active' : ''}}"><a href="{{route('about')}}">About</a></li>
+                            <li class="{{ Route::currentRouteName() == 'bus-search' ? 'active' : ''}}"><a href="{{route('bus-search')}}">Routes</a></li>
+                            <li class="{{ Route::currentRouteName() == 'agent-reg' ? 'active' : ''}}"><a href="{{route('agent-reg')}}">Agent Registration</a></li>
+                            <li class="{{ Route::currentRouteName() == 'privacy' ? 'active' : ''}}"><a href="{{route('privacy')}}">Privacy Policy</a></li>
+                            <li class="{{ Route::currentRouteName() == 'terms' ? 'active' : ''}}"><a href="{{route('terms')}}">Terms of Use</a></li>
                             <li>
                                 Need Help?<a
                                     data-target="#myModal3"
