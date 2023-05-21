@@ -39,7 +39,7 @@
 <div class="header">
     <div class="container">
         <div class="logo wow fadeInDown animated" data-wow-delay=".5s">
-            <a href="index.html"><span>Passengers</span></a>
+            <a href="{{route('home')}}"><span>Passengers</span></a>
         </div>
         <div class="clearfix"></div>
     </div>
