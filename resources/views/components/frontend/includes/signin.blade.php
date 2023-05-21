@@ -37,28 +37,35 @@
                             </ul>
                         </div>
                         <div class="login-right">
-                            <form>
+                            <form method="POST" action="{{ route('login') }}">
+                            @csrf
                                 <h3>Signin with your account</h3>
                                 <input
-                                    onblur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}"
+                                    id="email"
+                                    onblur="if (this.value == '') {this.value = 'Enter your Email';}"
                                     onfocus="this.value = '';"
                                     required=""
                                     type="text"
                                     value="Enter your mobile number or Email"
                                 />
                                 <input
+                                    id="password"
                                     onblur="if (this.value == '') {this.value = 'Password';}"
                                     onfocus="this.value = '';"
                                     required=""
                                     type="password"
                                     value="Password"
                                 />
-                                <h4><a href="#">Forgot password</a></h4>
+                                <h4>
+                                    @if (Route::has('password.request'))
+                                        <a href="#">{{ __('Forgot your password?') }}</a>
+                                    @endif
+                                </h4>
                                 <div class="single-bottom">
-                                    <input id="brand" type="checkbox" value=""/>
-                                    <label for="brand"><span></span>Remember Me.</label>
+                                    <input id="remember_me" type="checkbox" value=""/>
+                                    <label id="remember_me"><span>{{ __('Remember me') }}</span></label>
                                 </div>
-                                <input type="submit" value="SIGNIN"/>
+                                <input type="submit" value="{{ __('Log in') }}"/>
                             </form>
                         </div>
                         <div class="clearfix"></div>
