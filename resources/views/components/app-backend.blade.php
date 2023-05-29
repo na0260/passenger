@@ -60,6 +60,9 @@
 <script src="{{asset('assets/backend/js/index2.js')}}"></script>
 <!--app JS-->
 <script src="{{asset('assets/backend/js/app.js')}}"></script>
+<script>
+    new PerfectScrollbar(".app-container")
+</script>
 </body>
 
 </html>

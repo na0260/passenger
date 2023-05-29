@@ -25,7 +25,7 @@
             </ul>--}}
         </li>
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="javascript:void(0)" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
                 <div class="menu-title">Application</div>
@@ -62,13 +62,32 @@
                 <div class="menu-title">eCommerce</div>
             </a>
             <ul>
-                <li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Products</a>
+                <li><a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Products</a>
                 </li>
-                <li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product Details</a>
+                <li><a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product Details</a>
                 </li>
-                <li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Add New Products</a>
+                <li><a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Add New Products</a>
                 </li>
-                <li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>Orders</a>
+                <li><a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>Orders</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-menu"></i>
+                </div>
+                <div class="menu-title">Pages</div>
+            </a>
+            <ul>
+                <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>About</a>
+                    <ul>
+                        <li>
+                            <a class="has-arrow" href="{{ route('about.create') }}"><i class='bx bx-radio-circle'></i>Add</a>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{{route('about.update')}}"><i class='bx bx-radio-circle'></i>Edit</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
