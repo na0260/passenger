@@ -10,15 +10,15 @@
                             <table id="example2" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Sn.</th>
+                                    <th width="5%">Sn.</th>
                                     <th>Name</th>
                                     <th>Mail</th>
                                     <th>Organization</th>
                                     <th>Phone</th>
                                     <th>City</th>
-                                    <th>Message</th>
+                                    <th width="20%">Message</th>
                                     <th>Sent at</th>
-                                    <th>Action</th>
+                                    <th width="5%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
