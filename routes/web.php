@@ -47,8 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/privacy/edit/{id}', [PrivacyController::class, 'edit'])->name('privacy.edit');
     Route::post('/privacy/update/{id}', [PrivacyController::class, ('update')])->name('privacy.update');
 
-    Route::get('/about/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
-    Route::post('/about/update/{id}', [AboutController::class, ('update')])->name('about.update');
+    Route::get('/terms/edit/{id}', [TermsController::class, 'edit'])->name('terms.edit');
+    Route::post('/terms/update/{id}', [TermsController::class, ('update')])->name('terms.update');
 
 
 

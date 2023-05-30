@@ -10,7 +10,7 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="{{route('dashboard')}}">
                 <div class="parent-icon"><i class='bx bx-home-alt'></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
@@ -47,7 +47,7 @@
                 </li>
             </ul>--}}
         </li>
-        <li class="menu-label">UI Elements</li>
+        {{--<li class="menu-label">UI Elements</li>--}}
         {{--<li>
             <a href="widgets.html">
                 <div class="parent-icon"><i class='bx bx-cookie'></i>
@@ -55,7 +55,7 @@
                 <div class="menu-title">Widgets</div>
             </a>
         </li>--}}
-        <li>
+        {{--<li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cart'></i>
                 </div>
@@ -71,7 +71,7 @@
                 <li><a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>Orders</a>
                 </li>
             </ul>
-        </li>
+        </li>--}}
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-menu"></i>
@@ -87,7 +87,7 @@
                 </li>
             </ul>
             <ul>
-                <li><a class="has-arrow" href="{{route('privacy.edit',1)}}"><i class='bx bx-radio-circle'></i>Terms and Conditions</a>
+                <li><a class="has-arrow" href="{{route('terms.edit',1)}}"><i class='bx bx-radio-circle'></i>Terms and Conditions</a>
 
                 </li>
             </ul>
