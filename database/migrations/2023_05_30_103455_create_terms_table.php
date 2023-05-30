@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('terms', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->text('important')->nullable();
+            $table->text('policy')->nullable();
+            $table->text('scope')->nullable();
+            $table->text('disclaimer')->nullable();
         });
     }
 
