@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PrivacyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/about/create', [AboutController::class, 'create'])->name('about.create');
     Route::get('/about/update', [AboutController::class, 'update'])->name('about.update');
+
+    Route::get('/privacy/create', [PrivacyController::class, 'create'])->name('privacy.create');
+    Route::get('/privacy/update', [PrivacyController::class, 'update'])->name('privacy.update');
 
 
 });

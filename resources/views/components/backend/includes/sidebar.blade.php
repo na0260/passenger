@@ -90,6 +90,18 @@
                     </ul>
                 </li>
             </ul>
+            <ul>
+                <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Privacy</a>
+                    <ul>
+                        <li>
+                            <a class="has-arrow" href="{{ route('privacy.create') }}"><i class='bx bx-radio-circle'></i>Add</a>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="{{route('privacy.update')}}"><i class='bx bx-radio-circle'></i>Edit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </li>
         {{--<li>
             <a class="has-arrow" href="javascript:;">
