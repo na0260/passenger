@@ -32,7 +32,7 @@
                                     <td>{{$agent->city}}</td>
                                     <td>{{$agent->message}}</td>
                                     <td>{{$agent->created_at}}</td>
-                                    <td><a href="{{route('')}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>
+                                    <td><a href="{{route('agent-request.delete',$agent->id)}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -52,6 +52,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-success">{{Session::get('msg')}}</p>
             </div>
         </div>
     </x-slot>

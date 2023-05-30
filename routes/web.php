@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/terms/update/{id}', [TermsController::class, 'update'])->name('terms.update');
 
     Route::get('/agent-request/manage',[AgentRequestController::class, 'manage'])->name('agent-request.manage');
-    Route::delete('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
+    Route::get('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
 
 
 
