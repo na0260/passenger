@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -10,7 +11,8 @@ class FrontendController extends Controller
         return view('frontend.index');
     }
     public function about(){
-        return view('frontend.about');
+        $about = About::all()->first();
+        return view('frontend.about',['about'=>$about]);
     }
     public function agent_reg(){
         return view('frontend.agent-reg');
