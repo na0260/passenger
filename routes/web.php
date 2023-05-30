@@ -5,6 +5,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\TermsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/privacy/create', [PrivacyController::class, 'create'])->name('privacy.create');
     Route::get('/privacy/update', [PrivacyController::class, 'update'])->name('privacy.update');
+
+    Route::get('/terms/create', [TermsController::class, 'create'])->name('terms.create');
+    Route::get('/terms/update', [TermsController::class, 'update'])->name('terms.update');
 
 
 });
