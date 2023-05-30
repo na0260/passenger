@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('privacy')->nullable();
             $table->text('personally')->nullable();
             $table->text('check_out')->nullable();
+            $table->text('security')->nullable();
             $table->text('consent')->nullable();
             $table->text('sharing')->nullable();
             $table->timestamps();
