@@ -79,39 +79,16 @@
                 <div class="menu-title">Pages</div>
             </a>
             <ul>
-                <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>About</a>
-                    <ul>
-                        <li>
-                            <a class="has-arrow" href="{{ route('about.create') }}"><i class='bx bx-radio-circle'></i>Add</a>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="{{route('about.update')}}"><i class='bx bx-radio-circle'></i>Edit</a>
-                        </li>
-                    </ul>
+                <li><a class="has-arrow" href="{{route('about.edit',1)}}"><i class='bx bx-radio-circle'></i>About</a>
                 </li>
             </ul>
             <ul>
-                <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Privacy</a>
-                    <ul>
-                        <li>
-                            <a class="has-arrow" href="{{ route('privacy.create') }}"><i class='bx bx-radio-circle'></i>Add</a>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="{{route('privacy.update')}}"><i class='bx bx-radio-circle'></i>Edit</a>
-                        </li>
-                    </ul>
+                <li><a class="has-arrow" href="{{route('privacy.edit',1)}}"><i class='bx bx-radio-circle'></i>Privacy</a>
                 </li>
             </ul>
             <ul>
-                <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Terms and Conditions</a>
-                    <ul>
-                        <li>
-                            <a class="has-arrow" href="{{ route('terms.create') }}"><i class='bx bx-radio-circle'></i>Add</a>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="{{route('terms.update')}}"><i class='bx bx-radio-circle'></i>Edit</a>
-                        </li>
-                    </ul>
+                <li><a class="has-arrow" href="{{route('privacy.edit',1)}}"><i class='bx bx-radio-circle'></i>Terms and Conditions</a>
+
                 </li>
             </ul>
         </li>

@@ -41,14 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/about/create', [AboutController::class, 'create'])->name('about.create');
-    Route::get('/about/update', [AboutController::class, 'update'])->name('about.update');
+    Route::get('/about/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+    Route::post('/about/update/{id}', [AboutController::class, ('update')])->name('about.update');
 
-    Route::get('/privacy/create', [PrivacyController::class, 'create'])->name('privacy.create');
-    Route::get('/privacy/update', [PrivacyController::class, 'update'])->name('privacy.update');
+    Route::get('/privacy/edit/{id}', [PrivacyController::class, 'edit'])->name('privacy.edit');
+    Route::post('/privacy/update/{id}', [PrivacyController::class, ('update')])->name('privacy.update');
 
-    Route::get('/terms/create', [TermsController::class, 'create'])->name('terms.create');
-    Route::get('/terms/update', [TermsController::class, 'update'])->name('terms.update');
+    Route::get('/about/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+    Route::post('/about/update/{id}', [AboutController::class, ('update')])->name('about.update');
+
 
 
 });

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('our_story')->nullable();
             $table->text('services')->nullable();
             $table->text('technology')->nullable();
+            $table->timestamps();
         });
     }
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('policy')->nullable();
             $table->text('scope')->nullable();
             $table->text('disclaimer')->nullable();
+            $table->timestamps();
         });
     }
 

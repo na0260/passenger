@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Privacy;
 use Illuminate\Http\Request;
 
 class PrivacyController extends Controller
 {
-    public function create()
+    public function edit($id)
     {
-        return view('backend.pages.privacy.create');
+        $privacy = Privacy::find($id);
+        return view('backend.pages.privacy.edit',['privacy'=>$privacy]);
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
-        return view('backend.pages.privacy.edit');
+        $privacy = privacy::find($id);
+        $privacy->privacy = $request->our_story;
+        $privacy->personally = $request->personally;
+        $privacy->check_out  = $request->check_out;
+        $privacy->consent  = $request->consent;
+        $privacy->save();
+        return redirect()->back()->with('msg', 'Updated successfully');
     }
 }

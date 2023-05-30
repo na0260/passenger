@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('check_out')->nullable();
             $table->text('consent')->nullable();
             $table->text('sharing')->nullable();
+            $table->timestamps();
         });
     }
 
