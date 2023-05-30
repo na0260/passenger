@@ -20,5 +20,17 @@ class AgentRequestController extends Controller
         return redirect()->back()->with('msg', 'Your request is been sent. our support team will contact with you as soon as possible.');
     }
 
+    public function manage()
+    {
+        $agent = Agent_Request::all();
+        return view('backend.pages.agent.manage',['agents'=>$agent]);
+    }
+
+    public function delete($id)
+    {
+        $agent = Agent_Request::find($id);
+        $agent->delete();
+        return redirect()->back()->with('msg','Agent request has been removed successfully');
+    }
 
 }

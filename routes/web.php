@@ -44,13 +44,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/about/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
-    Route::post('/about/update/{id}', [AboutController::class, ('update')])->name('about.update');
+    Route::post('/about/update/{id}', [AboutController::class, 'update'])->name('about.update');
 
     Route::get('/privacy/edit/{id}', [PrivacyController::class, 'edit'])->name('privacy.edit');
-    Route::post('/privacy/update/{id}', [PrivacyController::class, ('update')])->name('privacy.update');
+    Route::post('/privacy/update/{id}', [PrivacyController::class, 'update'])->name('privacy.update');
 
     Route::get('/terms/edit/{id}', [TermsController::class, 'edit'])->name('terms.edit');
-    Route::post('/terms/update/{id}', [TermsController::class, ('update')])->name('terms.update');
+    Route::post('/terms/update/{id}', [TermsController::class, 'update'])->name('terms.update');
+
+    Route::get('/agent-request/manage',[AgentRequestController::class, 'manage'])->name('agent-request.manage');
+    Route::delete('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
 
 
 
