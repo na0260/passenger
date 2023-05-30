@@ -25,17 +25,19 @@
                     data-wow-delay=".5s"
                 >
                     <p>Submit details we will call you back</p>
-                    <form>
-                        <input type="text" placeholder="Name" />
-                        <input type="text" placeholder="Email" />
-                        <input type="text" placeholder="Organization" />
-                        <input type="text" placeholder="Phone" />
-                        <input type="text" placeholder="City" />
-                        <textarea placeholder="Message"></textarea>
+                    <form action="{{route('agent-request.store')}}" method="POST">
+                        @csrf
+                        <input type="text" placeholder="Name" name="name" required/>
+                        <input type="text" placeholder="Email" name="mail" required/>
+                        <input type="text" placeholder="Organization" name="organization" required/>
+                        <input type="text" placeholder="Phone" name="phone" required/>
+                        <input type="text" placeholder="City" name="city" required/>
+                        <textarea placeholder="Message" name="message"></textarea>
                         <div class="sub">
                             <input type="submit" value="Sign Up" />
                         </div>
                     </form>
+                    <p>{{Session::get('msg')}}</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
