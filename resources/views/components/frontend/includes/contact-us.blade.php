@@ -21,7 +21,7 @@
             <section>
                 <div class="modal-body modal-spa">
                     <div class="writ">
-                        <form action="{{route('contact-us.store')}}" method="POST">
+                        <form name="myForm" onsubmit="return validateForm()" action="{{route('contact-us.store')}}" method="POST">
                             @csrf
                             <h4>HOW CAN WE HELP YOU</h4>
                             <ul>
@@ -30,7 +30,7 @@
                                         class="name"
                                         onblur="if (this.value == '') {this.value = 'Name';}"
                                         onfocus="this.value = '';"
-                                        required=""
+                                        required
                                         type="text"
                                         value="Name"
                                         name="name"
@@ -41,7 +41,7 @@
                                         class="Email"
                                         onblur="if (this.value == '') {this.value = 'Email';}"
                                         onfocus="this.value = '';"
-                                        required=""
+                                        required
                                         type="text"
                                         value="Email"
                                         name="mail"
@@ -52,7 +52,7 @@
                                         class="number"
                                         onblur="if (this.value == '') {this.value = 'Mobile Number';}"
                                         onfocus="this.value = '';"
-                                        required=""
+                                        required
                                         type="text"
                                         value="Mobile Number"
                                         name="phone"
@@ -63,7 +63,7 @@
                                         class="number"
                                         onblur="if (this.value == '') {this.value = 'Subject';}"
                                         onfocus="this.value = '';"
-                                        required=""
+                                        required
                                         type="text"
                                         value="Subject"
                                         name="subject"
@@ -75,7 +75,7 @@
                                         class="special"
                                         onblur="if (this.value == '') {this.value = 'Write Description';}"
                                         onfocus="this.value = '';"
-                                        required=""
+                                        required
                                         type="text"
                                         value="Write Description"
                                         name="desc"
@@ -88,7 +88,6 @@
                             </div>
                         </form>
                     </div>
-                    <p class="text-success">{{Session::get('msg')}}</p>
                 </div>
             </section>
         </div>

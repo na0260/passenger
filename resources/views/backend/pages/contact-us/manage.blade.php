@@ -30,7 +30,7 @@
                                     <td>{{$contact->subject}}</td>
                                     <td>{{$contact->desc}}</td>
                                     <td>{{$contact->created_at}}</td>
-                                    <td><a href="" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>
+                                    <td><a href="{{route('feedbacks.delete',$contact->id)}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>

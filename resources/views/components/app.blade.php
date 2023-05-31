@@ -36,6 +36,7 @@
     <!--animate-->
     <link href="{{asset('assets/frontend/css/animate.css')}}" media="all" rel="stylesheet" type="text/css"/>
     <script src="{{asset('assets/frontend/js/wow.min.js')}}"></script>
+    <script src="{{asset('assets/frontend/js/script.js')}}"></script>
     <script>
         new WOW().init();
     </script>
@@ -43,6 +44,16 @@
 </head>
 
 <body>
+@error('mail')
+<span class="text-danger">{{$message}}</span><br>
+@enderror
+@error('phone')
+<span class="text-danger">{{$message}}</span><br>
+@enderror
+@error('desc')
+<span class="text-danger">{{$message}}</span><br>
+@enderror
+<h1 class="text-success">{{Session::get('msg')}}</h1>
 <x-frontend.includes.header/>
 
 {{$content}}
