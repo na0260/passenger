@@ -21,67 +21,74 @@
             <section>
                 <div class="modal-body modal-spa">
                     <div class="writ">
-                        <h4>HOW CAN WE HELP YOU</h4>
-                        <ul>
-                            <li class="na-me">
-                                <input
-                                    class="name"
-                                    onblur="if (this.value == '') {this.value = 'Name';}"
-                                    onfocus="this.value = '';"
-                                    required=""
-                                    type="text"
-                                    value="Name"
-                                />
-                            </li>
-                            <li class="na-me">
-                                <input
-                                    class="Email"
-                                    onblur="if (this.value == '') {this.value = 'Email';}"
-                                    onfocus="this.value = '';"
-                                    required=""
-                                    type="text"
-                                    value="Email"
-                                />
-                            </li>
-                            <li class="na-me">
-                                <input
-                                    class="number"
-                                    onblur="if (this.value == '') {this.value = 'Mobile Number';}"
-                                    onfocus="this.value = '';"
-                                    required=""
-                                    type="text"
-                                    value="Mobile Number"
-                                />
-                            </li>
-                            <li class="na-me">
-                                <input
-                                    class="number"
-                                    onblur="if (this.value == '') {this.value = 'Subject';}"
-                                    onfocus="this.value = '';"
-                                    required=""
-                                    type="text"
-                                    value="Subject"
-                                />
-                            </li>
+                        <form action="{{route('contact-us.store')}}" method="POST">
+                            @csrf
+                            <h4>HOW CAN WE HELP YOU</h4>
+                            <ul>
+                                <li class="na-me">
+                                    <input
+                                        class="name"
+                                        onblur="if (this.value == '') {this.value = 'Name';}"
+                                        onfocus="this.value = '';"
+                                        required=""
+                                        type="text"
+                                        value="Name"
+                                        name="name"
+                                    />
+                                </li>
+                                <li class="na-me">
+                                    <input
+                                        class="Email"
+                                        onblur="if (this.value == '') {this.value = 'Email';}"
+                                        onfocus="this.value = '';"
+                                        required=""
+                                        type="text"
+                                        value="Email"
+                                        name="mail"
+                                    />
+                                </li>
+                                <li class="na-me">
+                                    <input
+                                        class="number"
+                                        onblur="if (this.value == '') {this.value = 'Mobile Number';}"
+                                        onfocus="this.value = '';"
+                                        required=""
+                                        type="text"
+                                        value="Mobile Number"
+                                        name="phone"
+                                    />
+                                </li>
+                                <li class="na-me">
+                                    <input
+                                        class="number"
+                                        onblur="if (this.value == '') {this.value = 'Subject';}"
+                                        onfocus="this.value = '';"
+                                        required=""
+                                        type="text"
+                                        value="Subject"
+                                        name="subject"
+                                    />
+                                </li>
 
-                            <li class="descrip">
-                                <input
-                                    class="special"
-                                    onblur="if (this.value == '') {this.value = 'Write Description';}"
-                                    onfocus="this.value = '';"
-                                    required=""
-                                    type="text"
-                                    value="Write Description"
-                                />
-                            </li>
-                            <div class="clearfix"></div>
-                        </ul>
-                        <div class="sub-bn">
-                            <form>
+                                <li class="descrip">
+                                    <input
+                                        class="special"
+                                        onblur="if (this.value == '') {this.value = 'Write Description';}"
+                                        onfocus="this.value = '';"
+                                        required=""
+                                        type="text"
+                                        value="Write Description"
+                                        name="desc"
+                                    />
+                                </li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <div class="sub-bn">
                                 <button class="subbtn">Submit</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
+                    <p class="text-success">{{Session::get('msg')}}</p>
                 </div>
             </section>
         </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermsController;
 use App\Http\Controllers\AgentRequestController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/agent-registration', [FrontendController::class, 'agent_reg'])->name('agent-reg');
 Route::post('/agent-registration/store', [AgentRequestController::class, 'store'])->name('agent-request.store');
+Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/bus-routes', [FrontendController::class, 'bus_routes'])->name('bus-routes');
 Route::get('/search-bus', [FrontendController::class, 'bus_search'])->name('bus-search');
 Route::get('/privacy-policy', [FrontendController::class, 'privacy'])->name('privacy');
