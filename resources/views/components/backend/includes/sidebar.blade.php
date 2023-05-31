@@ -49,7 +49,7 @@
                 </li>
             </ul>
             <ul>
-                <li><a href="{{route('agent-request.manage')}}"><i class='bx bx-radio-circle'></i>Registration</a>
+                <li><a href="{{route('agent.registration')}}"><i class='bx bx-radio-circle'></i>Registration</a>
                 </li>
             </ul>
             <ul>

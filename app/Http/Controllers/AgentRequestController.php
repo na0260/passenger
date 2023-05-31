@@ -31,7 +31,7 @@ class AgentRequestController extends Controller
     public function manage()
     {
         $agent = Agent_Request::all();
-        return view('backend.pages.agent.manage',['agents'=>$agent]);
+        return view('backend.pages.agent.requests',['agents'=>$agent]);
     }
 
     public function delete($id)

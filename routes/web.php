@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermsController;
 use App\Http\Controllers\AgentRequestController;
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +57,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/agent-request/manage',[AgentRequestController::class, 'manage'])->name('agent-request.manage');
     Route::get('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
+
+    Route::get('/agent-registration',[AgentController::class, 'registration'])->name('agent.registration');
 
     Route::get('/feedbacks/manage',[ContactController::class, 'manage'])->name('feedbacks.manage');
     Route::get('/feedbacks/delete/{id}',[ContactController::class, 'delete'])->name('feedbacks.delete');
