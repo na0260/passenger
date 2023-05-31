@@ -9,6 +9,14 @@ class AgentRequestController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'mail' => 'email|required',
+            'phone' => 'numeric|digits:11|required'
+        ],[
+            'mail.email' => 'Please enter a valid mail. (Ex. example@mail.com)',
+            'phone.numeric' => 'Please enter a valid phone number. (Ex. 01XXXXXXXXX)',
+            'phone.digits' => 'Opps!!! You missed out some digits, Please check again. (Ex. 01XXXXXXXXX)'
+        ]);
         $agent = new Agent_Request();
         $agent->name = $request->name;
         $agent->mail = $request->mail;

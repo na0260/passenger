@@ -54,18 +54,16 @@
                                 />
                             </li>
                             <li class="na-me">
-                                <select
-                                    class="frm-field required sect"
-                                    id="country"
-                                    onchange="change_country(this.value)"
-                                >
-                                    <option value="null">Select Issue</option>
-                                    <option value="null">Booking Issues</option>
-                                    <option value="null">Bus Cancellation</option>
-                                    <option value="null">Refund</option>
-                                    <option value="null">Wallet</option>
-                                </select>
+                                <input
+                                    class="number"
+                                    onblur="if (this.value == '') {this.value = 'Subject';}"
+                                    onfocus="this.value = '';"
+                                    required=""
+                                    type="text"
+                                    value="Subject"
+                                />
                             </li>
+
                             <li class="descrip">
                                 <input
                                     class="special"

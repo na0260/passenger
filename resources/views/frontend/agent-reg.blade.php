@@ -29,12 +29,18 @@
                         @csrf
                         <input type="text" placeholder="Name" name="name" required/>
                         <input type="text" placeholder="Email" name="mail" required/>
+                        @error('mail')
+                        <br><span class="text-danger">{{$message}}</span><br>
+                        @enderror
                         <input type="text" placeholder="Organization" name="organization" required/>
                         <input type="text" placeholder="Phone" name="phone" required/>
+                        @error('phone')
+                        <br><span class="text-danger">{{$message}}</span><br>
+                        @enderror
                         <input type="text" placeholder="City" name="city" required/>
                         <textarea placeholder="Message" name="message"></textarea>
                         <div class="sub">
-                            <input type="submit" value="Sign Up" />
+                            <input type="submit" value="Submit" />
                         </div>
                     </form>
                     <p>{{Session::get('msg')}}</p>
