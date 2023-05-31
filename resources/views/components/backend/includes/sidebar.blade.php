@@ -53,7 +53,7 @@
                 </li>
             </ul>
             <ul>
-                <li><a href="{{route('agent-request.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
+                <li><a href="{{route('agent.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
 
                 </li>
             </ul>

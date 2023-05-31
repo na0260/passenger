@@ -10,4 +10,9 @@ class AgentController extends Controller
     {
         return view('backend.pages.agent.registration');
     }
+
+    public function manage()
+    {
+        return view('backend.pages.agent.manage');
+    }
 }
