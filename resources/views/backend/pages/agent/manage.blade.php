@@ -1,4 +1,4 @@
-<x-app-backend title="Dashboard">
+<x-app-backend title="Agent Requests | Dashboard">
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">

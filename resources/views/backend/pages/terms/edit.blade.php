@@ -1,4 +1,4 @@
-<x-app-backend title="Dashboard">
+<x-app-backend title="Terms - Edit | Dashboard">
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">

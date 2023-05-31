@@ -1,4 +1,4 @@
-<x-app-backend title="Feedbacks">
+<x-app-backend title="Feedbacks | Dashboard">
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">
