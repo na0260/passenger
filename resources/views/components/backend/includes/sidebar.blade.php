@@ -65,6 +65,13 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="{{route('feedbacks.manage')}}">
+                <div class="parent-icon"><i class='bx bx-home-alt'></i>
+                </div>
+                <div class="menu-title">Feedbacks</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </div>

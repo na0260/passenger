@@ -57,6 +57,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/agent-request/manage',[AgentRequestController::class, 'manage'])->name('agent-request.manage');
     Route::get('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
 
+    Route::get('/feedbacks/manage',[ContactController::class, 'manage'])->name('feedbacks.manage');
+//    Route::get('/agent-request/delete/{id}',[AgentRequestController::class, 'delete'])->name('agent-request.delete');
+
 
 
 });

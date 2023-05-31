@@ -26,4 +26,10 @@ class ContactController extends Controller
         $contact->save();
         return redirect()->back()->with('msg', 'Thank you for contacting us. We will get to very soon.');
     }
+
+    public function manage()
+    {
+        $contact = Contact::all();
+        return view('backend.pages.contact-us.manage',['contacts'=>$contact]);
+    }
 }
