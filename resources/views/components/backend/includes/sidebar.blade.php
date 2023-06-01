@@ -40,7 +40,7 @@
         </li>
         <li>
             <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-menu"></i>
+                <div class="parent-icon"><i class="bx bx-user"></i>
                 </div>
                 <div class="menu-title">Agent</div>
             </a>
@@ -54,6 +54,26 @@
             </ul>
             <ul>
                 <li><a href="{{route('agent.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
+
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-bus"></i>
+                </div>
+                <div class="menu-title">Bus</div>
+            </a>
+            <ul>
+                <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
+                </li>
+            </ul>
+            <ul>
+                <li><a href=""><i class='bx bx-radio-circle'></i>Registration</a>
+                </li>
+            </ul>
+            <ul>
+                <li><a href=""><i class='bx bx-radio-circle'></i>Lists</a>
 
                 </li>
             </ul>
