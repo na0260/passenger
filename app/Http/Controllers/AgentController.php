@@ -33,6 +33,7 @@ class AgentController extends Controller
     }
     public function manage()
     {
-        return view('backend.pages.agent.manage');
+        $user = User::all()->where('type','=','agent');
+        return view('backend.pages.agent.manage',['users'=>$user]);
     }
 }

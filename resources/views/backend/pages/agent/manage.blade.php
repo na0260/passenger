@@ -20,20 +20,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @for($x = 0; $x <= 10; $x++)
+                                @foreach($users as $user)
                                     <tr>
-                                        <td>{{$x+1}}</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                        <td>5</td>
-                                        <td>6</td>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$user->organization}}</td>
+                                        <td>{{$user->created_at}}</td>
                                         <td><div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                                             </div>
                                         </td>
                                     </tr>
-                                @endfor
+                                @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
