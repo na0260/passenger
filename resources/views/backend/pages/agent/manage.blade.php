@@ -1,4 +1,4 @@
-<x-app-backend title="Agent Requests | Dashboard">
+<x-app-backend title="Agent List | Dashboard">
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">
@@ -28,10 +28,13 @@
                                         <td>{{$user->phone}}</td>
                                         <td>{{$user->organization}}</td>
                                         <td>{{$user->created_at}}</td>
-                                        <td><div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                        <td><div class="form-check form-switch"><a class="text-decoration-none" href="{{route('agent.status.update',$user->id)}}">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                                                        {{$user->status == 'active' ? 'checked' : ''}}>
+                                                </a>
                                             </div>
                                         </td>
+{{--                                        <td><a href="{{route('agent.delete',$agent->id)}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>

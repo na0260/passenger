@@ -36,4 +36,18 @@ class AgentController extends Controller
         $user = User::all()->where('type','=','agent');
         return view('backend.pages.agent.manage',['users'=>$user]);
     }
+
+    public function status($id)
+    {
+        $user = User::find($id);
+        if ('active' == $user->status){
+            $user->status = 'inactive';
+        }
+        else{
+            $user->status = 'active';
+        }
+        $user->save();
+
+        return redirect()->back()->with('msg','Agent status updated successfully');
+    }
 }

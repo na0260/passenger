@@ -68,6 +68,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/agent/registration', [AgentController::class, 'registration'])->name('agent.registration');
         Route::post('/agent/store', [AgentController::class, 'store'])->name('agent.store');
         Route::get('/agent/manage', [AgentController::class, 'manage'])->name('agent.manage');
+        Route::get('/agent/status/update/{id}', [AgentController::class, 'status'])->name('agent.status.update');
 
         Route::get('/feedbacks/manage', [ContactController::class, 'manage'])->name('feedbacks.manage');
         Route::get('/feedbacks/delete/{id}', [ContactController::class, 'delete'])->name('feedbacks.delete');
