@@ -13,6 +13,9 @@
     <link href="{{asset('assets/backend/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/backend/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/backend/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet"/>
+    <link href="{{ asset('assets/backend/plugins/bs-stepper/css/bs-stepper.css') }}" rel="stylesheet" />
+
+
     <!-- loader-->
     <link href="{{asset('assets/backend/css/pace.min.css')}}" rel="stylesheet"/>
     <script src="{{asset('assets/backend/js/pace.min.js')}}"></script>
@@ -57,11 +60,17 @@
 <script src="{{asset('assets/backend/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/chartjs/js/chart.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
+
 <!--Morris JavaScript -->
 <script src="{{asset('assets/backend/plugins/raphael/raphael-min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/morris/js/morris.js')}}"></script>
 <script src="{{asset('assets/backend/js/index2.js')}}"></script>
 <!--app JS-->
+
+
+<script src="{{ asset('assets/backend/plugins/bs-stepper/js/bs-stepper.min.js') }}"></script>
+<script src="{{ asset('assets/backend/plugins/bs-stepper/js/main.js') }}"></script>
+
 <script src="{{asset('assets/backend/js/app.js')}}"></script>
 <script src="{{asset('assets/backend/js/script.js')}}"></script>
 </body>

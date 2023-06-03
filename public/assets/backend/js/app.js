@@ -1,6 +1,6 @@
-$(function() {
-	"use strict";
-	new PerfectScrollbar(".header-message-list"), new PerfectScrollbar(".header-notifications-list"),
+$(document).ready(function() {
+
+
 
 
 	    $(".mobile-search-icon").on("click", function() {
@@ -14,7 +14,7 @@ $(function() {
 		$(".mobile-toggle-menu").on("click", function() {
 			$(".wrapper").addClass("toggled")
 		}),
-		
+
 
 
 
@@ -28,9 +28,9 @@ $(function() {
 				$("html").attr("class", "dark-theme")
 			}
 
-		}), 
+		}),
 
-		
+
 		$(".toggle-icon").click(function() {
 			$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $(".sidebar-wrapper").unbind("hover")) : ($(".wrapper").addClass("toggled"), $(".sidebar-wrapper").hover(function() {
 				$(".wrapper").addClass("sidebar-hovered")
@@ -47,18 +47,18 @@ $(function() {
 				}, 600), !1
 			})
 		}),
-		
+
 		$(function() {
 			for (var e = window.location, o = $(".metismenu li a").filter(function() {
 					return this.href == e
 				}).addClass("").parent().addClass("mm-active"); o.is("li");) o = o.parent("").addClass("mm-show").parent("").addClass("mm-active")
 		}),
-		
-		
+
+
 		$(function() {
 			$("#menu").metisMenu()
-		}), 
-		
+		}),
+
 		$(".chat-toggle-btn").on("click", function() {
 			$(".chat-wrapper").toggleClass("chat-toggled")
 		}), $(".chat-toggle-btn-mobile").on("click", function() {
@@ -74,9 +74,9 @@ $(function() {
 			$(".compose-mail-popup").show()
 		}), $(".compose-mail-close").on("click", function() {
 			$(".compose-mail-popup").hide()
-		}), 
-		
-		
+		}),
+
+
 		$(".switcher-btn").on("click", function() {
 			$(".switcher-wrapper").toggleClass("switcher-toggled")
 		}), $(".close-switcher").on("click", function() {
@@ -106,8 +106,8 @@ $(function() {
 		}), $("#headercolor8").on("click", function() {
 			$("html").addClass("color-header headercolor8"), $("html").removeClass("headercolor1 headercolor2 headercolor4 headercolor5 headercolor6 headercolor7 headercolor3")
 		})
-		
-	// sidebar colors 
+
+	// sidebar colors
 	$('#sidebarcolor1').click(theme1);
 	$('#sidebarcolor2').click(theme2);
 	$('#sidebarcolor3').click(theme3);
@@ -148,6 +148,6 @@ $(function() {
 	function theme8() {
 		$('html').attr('class', 'color-sidebar sidebarcolor8');
 	}
-	
-	
+
+
 });

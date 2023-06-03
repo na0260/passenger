@@ -64,8 +64,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
 
-    Route::get('/feedbacks/manage', [ContactController::class, 'manage'])->name('feedbacks.manage');
-    Route::get('/feedbacks/delete/{id}', [ContactController::class, 'delete'])->name('feedbacks.delete');
+
+    Route::middleware('agent')->group(function () {
+        Route::get('/feedbacks/manage', [ContactController::class, 'manage'])->name('feedbacks.manage');
+        Route::get('/feedbacks/delete/{id}', [ContactController::class, 'delete'])->name('feedbacks.delete');
+    });
+
 });
 
 require __DIR__ . '/auth.php';
