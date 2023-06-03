@@ -5,7 +5,8 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <div class="card">
-                            <form>
+                            <form action="{{route('agent.store')}}" method="Post">
+                                @csrf
                                 <div class="card-body p-4">
                                     <h5 class="mb-4">Agent Registration</h5>
                                     <div class="row mb-3">
@@ -14,7 +15,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-user'></i></span>
                                                 <input type="text" class="form-control" id="input49"
-                                                       placeholder="Agent Name">
+                                                       placeholder="Agent Name" name="name">
                                             </div>
                                         </div>
                                     </div>
@@ -23,7 +24,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-microphone'></i></span>
-                                                <input type="text" class="form-control" id="input50" placeholder="Phone No">
+                                                <input type="text" class="form-control" id="input50" placeholder="Phone No" name="phone">
                                             </div>
                                         </div>
                                     </div>
@@ -32,7 +33,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-envelope'></i></span>
-                                                <input type="text" class="form-control" id="input51" placeholder="Email">
+                                                <input type="text" class="form-control" id="input51" placeholder="Email" name="email">
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +42,7 @@
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bxs-business'></i></span>
-                                                <input type="text" class="form-control" id="input51" placeholder="Organization">
+                                                <input type="text" class="form-control" id="input51" placeholder="Organization" name="organization">
                                             </div>
                                         </div>
                                     </div>
@@ -54,6 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <p class="text-success">{{Session::get('msg')}}</p>
                                 </div>
                             </form>
                         </div>
