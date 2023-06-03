@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\Privacy;
+use App\Models\Terms;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -10,7 +13,8 @@ class FrontendController extends Controller
         return view('frontend.index');
     }
     public function about(){
-        return view('frontend.about');
+        $about = About::all()->first();
+        return view('frontend.about',['about'=>$about]);
     }
     public function agent_reg(){
         return view('frontend.agent-reg');
@@ -22,9 +26,11 @@ class FrontendController extends Controller
         return view('frontend.bus-search');
     }
     public function privacy(){
-        return view('frontend.privacy');
+        $privacy = Privacy::all()->first();
+        return view('frontend.privacy',['privacy'=>$privacy]);
     }
     public function terms(){
-        return view('frontend.terms');
+        $terms = Terms::all()->first();
+        return view('frontend.terms',['terms'=>$terms]);
     }
 }

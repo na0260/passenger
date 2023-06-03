@@ -6,12 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
-    <link rel="icon" href="" type="image/png"/>
+    <link rel="icon" href="{{asset('assets/backend/images/favicon-32x32.png')}}" type="image/png"/>
     <!--plugins-->
     <link href="{{asset('assets/backend/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/backend/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/backend/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/backend/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/backend/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet"/>
     <!-- loader-->
     <link href="{{asset('assets/backend/css/pace.min.css')}}" rel="stylesheet"/>
     <script src="{{asset('assets/backend/js/pace.min.js')}}"></script>
@@ -42,7 +43,7 @@
 <!--end wrapper-->
 <x-backend.includes.search/>
 
-<x-backend.includes.switcher
+<x-backend.includes.switcher/>
 <!-- Bootstrap JS -->
 <script src="{{asset('assets/backend/js/bootstrap.bundle.min.js')}}"></script>
 <!--plugins-->
@@ -50,6 +51,8 @@
 <script src="{{asset('assets/backend/plugins/simplebar/js/simplebar.min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/metismenu/js/metisMenu.min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+<script src="{{asset('assets/backend/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/backend/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/chartjs/js/chart.js')}}"></script>
@@ -60,6 +63,7 @@
 <script src="{{asset('assets/backend/js/index2.js')}}"></script>
 <!--app JS-->
 <script src="{{asset('assets/backend/js/app.js')}}"></script>
+<script src="{{asset('assets/backend/js/script.js')}}"></script>
 </body>
 
 </html>
