@@ -11,6 +11,7 @@ class BackendController extends Controller
     {
         $user = User::all()->count();
         $agent = User::all()->where('type','=','agent')->count();
-        return view('backend.index',['user_count'=>$user,'agent_count'=>$agent]);
+        $organization = User::get()->where('type','=','agent');
+        return view('backend.index',['user_count'=>$user,'agent_count'=>$agent, 'organizations'=>$organization]);
     }
 }

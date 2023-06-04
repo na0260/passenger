@@ -87,12 +87,11 @@
                     <div class="col-12 col-lg-4">
                         <div class="card radius-10">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center border-top">Alif Paribahan <span class="badge bg-danger rounded-pill">20</span>
-                                </li>
-                                <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center">BRTC <span class="badge bg-primary rounded-pill">15</span>
-                                </li>
-                                <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center">Turag <span class="badge bg-success rounded-pill">30</span>
-                                </li>
+                                @foreach($organizations as $organization)
+                                    <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center border-top">{{$organization->organization}} <span class="badge bg-danger rounded-pill">{{random_int(1000, 9999)}}</span>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
