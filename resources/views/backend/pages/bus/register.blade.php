@@ -2,6 +2,152 @@
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">
+
+                <div class="card-body p-4">
+                    @if(Route::currentRouteName() == 'bus.register')
+                        <form>
+                            <h5 class="mb-4">Bus Register</h5>
+                            <div class="row g-3">
+                                <div class="col-12 col-lg-6">
+                                    <label for="FisrtName" class="form-label">Bus Name</label>
+                                    <input type="text" class="form-control" id="FisrtName" placeholder="Bus name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label for="PhoneNumber" class="form-label">Bus Number</label>
+                                    <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label for="InputEmail" class="form-label">Total stoppage</label>
+                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter total stoppage">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label for="InputEmail" class="form-label">Start Point</label>
+                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter start point">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label for="InputEmail" class="form-label">End Point</label>
+                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter end point">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Start Time:</label>
+                                    <input type="time" class="form-control">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">End Time:</label>
+                                    <input type="time" class="form-control">
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <button type="submit" class="btn btn-primary px-4" >ADD</button>
+                                </div>
+                            </div><!---end row-->
+                        </form>
+                    @elseif(Route::currentRouteName() == 'driver.register')
+                        <form>
+                            <h5 class="mb-4">Driver Information</h5>
+                            <div class="row g-3">
+                                <div class="col-12 col-lg-6">
+                                    <label for="Inputbus" class="form-label">Bus Name</label>
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example">
+                                        <option selected>---</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Driver Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter driver name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label for="" class="form-label">Driver Contact</label>
+                                    <input type="text" class="form-control" placeholder="01XXXXXXXXX">
+                                </div>
+
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Driver NID</label>
+                                    <input type="text" class="form-control" placeholder="Enter driver NID number">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Driving Licence no.</label>
+                                    <input type="text" class="form-control" placeholder="Enter driving licence no.">
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <label class="form-label">Driver Address</label>
+                                    <textarea class="form-control" placeholder="Enter driver address" rows="3"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button type="submit" class="btn btn-primary px-4">Add</button>
+                                    </div>
+                                </div>
+                            </div><!---end row-->
+
+                        </form>
+                    @endif
+
+                    {{--
+                    <form>
+                        <h5 class="mb-4">Add Stations</h5>
+                        <div class="row g-3">
+                            <div class="col-12 col-lg-6">
+                                <label for="Inputbus" class="form-label">Bus Name</label>
+                                <select class="form-select" id="Inputbus" aria-label="Default select example">
+                                    <option selected>---</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 1</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 2</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 3</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 4</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 5</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 6</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 7</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 8</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 9</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="form-label">Station - 10</label>
+                                <input type="text" class="form-control" placeholder="Station name">
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-outline-secondary px-4" onclick="stepper2.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+                                    <button class="btn btn-primary px-4" onclick="stepper2.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+                                </div>
+                            </div>
+                        </div><!---end row-->
+                    </form>--}}
+                </div>
+
                 <!--start stepper two-->
                 {{--<h6 class="text-uppercase">Bus register</h6>
                 <hr>
@@ -177,7 +323,7 @@
                 <!--end stepper two-->
 
 
-                <!--start stepper two-->
+                {{--<!--start stepper two-->
                 <h6 class="text-uppercase">Linear Stepper</h6>
                 <hr>
                 <div id="stepper2" class="bs-stepper">
@@ -388,7 +534,7 @@
                         </div>
                     </div>
                 </div>
-                <!--end stepper two-->
+                <!--end stepper two-->--}}
             </div>
         </div>
     </x-slot>

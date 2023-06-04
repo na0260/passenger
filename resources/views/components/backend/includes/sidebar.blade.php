@@ -67,8 +67,17 @@
                         <div class="menu-title">Bus</div>
                     </a>
                     <ul>
-                        <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
+                        <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Register</a>
+                            <ul>
+                                <li> <a href="{{route('bus.register')}}"><i class="bx bx-radio-circle"></i>Bus Info</a>
+                                </li>
+                                <li> <a href="{{route('driver.register')}}"><i class="bx bx-radio-circle"></i>Driver Info</a>
+                                </li>
+                                <li> <a href="javascript:;"><i class="bx bx-radio-circle"></i>Route Info</a>
+                                </li>
+                            </ul>
                         </li>
+
                     </ul>
                     <ul>
                         <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>
@@ -102,8 +111,17 @@
                         <div class="menu-title">Bus</div>
                     </a>
                     <ul>
-                        <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
+                        <li><a class="has-arrow" href="javascript:;"><i class='bx bx-radio-circle'></i>Register</a>
+                            <ul>
+                                <li> <a href="{{route('bus.register')}}"><i class="bx bx-radio-circle"></i>Bus Info</a>
+                                </li>
+                                <li> <a href="{{route('driver.register')}}"><i class="bx bx-radio-circle"></i>Driver Info</a>
+                                </li>
+                                <li> <a href="javascript:;"><i class="bx bx-radio-circle"></i>Route Info</a>
+                                </li>
+                            </ul>
                         </li>
+
                     </ul>
                     <ul>
                         <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>

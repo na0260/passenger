@@ -10,6 +10,7 @@ use App\Http\Controllers\AgentRequestController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\DriverController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
+
+    Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
+
+    Route::get('/diver/register', [DriverController::class, 'register'])->name('driver.register');
 
     Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
 
