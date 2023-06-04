@@ -8,84 +8,116 @@
         </div>
     </div>
     <!--navigation-->
-    <ul class="metismenu" id="menu">
-        <li>
-            <a href="{{route('dashboard')}}">
-                <div class="parent-icon"><i class='bx bx-home-alt'></i>
-                </div>
-                <div class="menu-title">Dashboard</div>
-            </a>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-menu"></i>
-                </div>
-                <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-                <li><a href="{{route('about.edit',1)}}"><i class='bx bx-radio-circle'></i>About</a>
+    @auth()
+        <ul class="metismenu" id="menu">
+            @if(auth()->user()->type == 'admin')
+                <li>
+                    <a href="{{route('dashboard')}}">
+                        <div class="parent-icon"><i class='bx bx-home-alt'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
                 </li>
-            </ul>
-            <ul>
-                <li><a href="{{route('privacy.edit',1)}}"><i
-                            class='bx bx-radio-circle'></i>Privacy</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="{{route('terms.edit',1)}}"><i class='bx bx-radio-circle'></i>Terms and
-                        Conditions</a>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-menu"></i>
+                        </div>
+                        <div class="menu-title">Pages</div>
+                    </a>
+                    <ul>
+                        <li><a href="{{route('about.edit',1)}}"><i class='bx bx-radio-circle'></i>About</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{route('privacy.edit',1)}}"><i
+                                    class='bx bx-radio-circle'></i>Privacy</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{route('terms.edit',1)}}"><i class='bx bx-radio-circle'></i>Terms and
+                                Conditions</a>
 
+                        </li>
+                    </ul>
                 </li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-user"></i>
-                </div>
-                <div class="menu-title">Agent</div>
-            </a>
-            <ul>
-                <li><a href="{{route('agent-request.manage')}}"><i class='bx bx-radio-circle'></i>Requests</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="{{route('agent.registration')}}"><i class='bx bx-radio-circle'></i>Registration</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="{{route('agent.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-user"></i>
+                        </div>
+                        <div class="menu-title">Agent</div>
+                    </a>
+                    <ul>
+                        <li><a href="{{route('agent-request.manage')}}"><i class='bx bx-radio-circle'></i>Requests</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{route('agent.registration')}}"><i class='bx bx-radio-circle'></i>Registration</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{route('agent.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
 
+                        </li>
+                    </ul>
                 </li>
-            </ul>
-        </li>
-        <li>
-            <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-bus"></i>
-                </div>
-                <div class="menu-title">Bus</div>
-            </a>
-            <ul>
-                <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>
-                </li>
-            </ul>
-            <ul>
-                <li><a href="#"><i class='bx bx-radio-circle'></i>Lists</a>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-bus"></i>
+                        </div>
+                        <div class="menu-title">Bus</div>
+                    </a>
+                    <ul>
+                        <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class='bx bx-radio-circle'></i>Lists</a>
 
+                        </li>
+                    </ul>
                 </li>
-            </ul>
-        </li>
-        <li>
-            <a href="{{route('feedbacks.manage')}}">
-                <div class="parent-icon"><i class='bx bx-user-circle'></i>
-                </div>
-                <div class="menu-title">Feedbacks</div>
-            </a>
-        </li>
-    </ul>
+                <li>
+                    <a href="{{route('feedbacks.manage')}}">
+                        <div class="parent-icon"><i class='bx bx-user-circle'></i>
+                        </div>
+                        <div class="menu-title">Feedbacks</div>
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{route('dashboard')}}">
+                        <div class="parent-icon"><i class='bx bx-home-alt'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-bus"></i>
+                        </div>
+                        <div class="menu-title">Bus</div>
+                    </a>
+                    <ul>
+                        <li><a href="{{route('bus.register')}}"><i class='bx bx-radio-circle'></i>Register</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class='bx bx-radio-circle'></i>Lists</a>
+
+                        </li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
+    @endauth
     <!--end navigation-->
 </div>
 <!--end sidebar wrapper -->
