@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Privacy;
 use App\Models\Terms;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index(){
-        return view('frontend.index');
+        $agent = User::all()->where('type','=','agent')->count();
+        return view('frontend.index',['agent_count'=>$agent]);
     }
     public function about(){
         $about = About::all()->first();

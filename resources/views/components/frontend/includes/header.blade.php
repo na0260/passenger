@@ -23,11 +23,11 @@
                         >Sign In</a
                         >
                     </li>
-                    @if (Route::has('register'))
+                    {{--@if (Route::has('register'))
                         <li class="sig">
-                            <a {{--data-target="#myModal" data-toggle="modal"--}} href="{{ route('register') }}">/ Sign Up</a>
+                            <a --}}{{--data-target="#myModal" data-toggle="modal"--}}{{-- href="{{ route('register') }}">/ Sign Up</a>
                         </li>
-                    @endif
+                    @endif--}}
                 @endauth
             @endif
         </ul>

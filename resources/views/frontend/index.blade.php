@@ -84,7 +84,7 @@
                     </div>
                     <div class="rou-rgt">
                         <h3>1900</h3>
-                        <p>BUS OPERATORS</p>
+                        <p>BUSES</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -96,8 +96,8 @@
                         <a href="#"><i class="fa fa-user"></i></a>
                     </div>
                     <div class="rou-rgt">
-                        <h3>7,00,00,000+</h3>
-                        <p>Online Users</p>
+                        <h3>{{$agent_count}}</h3>
+                        <p>Total Agent</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>

@@ -42,7 +42,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Users</p>
-                                                        <h5 class="my-0">1.3K</h5>
+                                                        <h5 class="my-0">{{$user_count}}</h5>
                                                     </div>
                                                     <div class="text-success ms-auto font-30"><i class='bx bx-group'></i>
                                                     </div>
@@ -56,7 +56,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Agents</p>
-                                                        <h5 class="my-0">956</h5>
+                                                        <h5 class="my-0">{{$agent_count}}</h5>
                                                     </div>
                                                     <div class="text-warning ms-auto font-30"><i class='bx bxs-business'></i>
                                                     </div>
