@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 03, 2023 at 08:02 PM
+-- Generation Time: Jun 04, 2023 at 01:30 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -66,7 +66,9 @@ CREATE TABLE `agent__requests` (
 --
 
 INSERT INTO `agent__requests` (`id`, `name`, `mail`, `organization`, `phone`, `city`, `message`, `created_at`, `updated_at`) VALUES
-(2, 'Test', 'test@mail.com', 'Test Transport', '01234567897', 'Dhaka', 'Test Message', '2023-05-31 11:08:14', '2023-05-31 11:08:14');
+(2, 'Test', 'test@mail.com', 'Test Transport', '01234567897', 'Dhaka', 'Test Message', '2023-05-31 11:08:14', '2023-05-31 11:08:14'),
+(3, 'my full name', 'me@mydomain.com', 'test', '12312312312', 'city name', '30', '2023-06-04 11:20:20', '2023-06-04 11:20:20'),
+(5, 'my full name', 'me@mydomain.com', 'test', '12312312312', 'city name', '30', '2023-06-04 11:26:15', '2023-06-04 11:26:15');
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,10 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `mail`, `phone`, `subject`, `desc`, `created_at`, `updated_at`) VALUES
-(1, 'Test', 'test@mail.com', '01234567897', 'Test', 'Test', '2023-05-31 10:46:22', '2023-05-31 10:46:22');
+(1, 'Test', 'test@mail.com', '01234567897', 'Test', 'Test', '2023-05-31 10:46:22', '2023-05-31 10:46:22'),
+(3, 'my full name', 'me@mydomain.com', '12312312312', 'Subject', 'Write Description', '2023-06-04 11:27:36', '2023-06-04 11:27:36'),
+(5, 'my full name', 'me@mydomain.com', '12312312312', 'Subject', 'this is a comment', '2023-06-04 11:30:30', '2023-06-04 11:30:30'),
+(6, 'my full name', 'me@mydomain.com', '12312312312', 'Subject', 'this is a comment', '2023-06-04 11:30:44', '2023-06-04 11:30:44');
 
 -- --------------------------------------------------------
 
@@ -226,12 +231,12 @@ CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` text COLLATE utf8mb4_unicode_ci,
+  `phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
-  `organization` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `organization` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
+  `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
   `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -245,7 +250,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `type`, `organization`, `em
 (1, 'test', 'test@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$mrCnneJ/v0Hgnt3XKgp6KeDxnVYKSBbtoC1Y9HHk4gIoEFqd9EQtm', 'active', NULL, '2023-05-30 06:39:17', '2023-05-30 06:39:17'),
 (2, 'Test Agent', 'testagent@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$IWElKclUnuYThGIFzvOq7.Qut2AAnqQksbNEBnV4iVucSVWNSlUAK', 'active', NULL, '2023-06-03 19:28:50', '2023-06-03 19:28:50'),
 (3, 'new', 'agent@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$9fO1Ln5zSAX0jX94yoJkWOlOLaGWsi3FwLBS/ZfUh7FCPNy7Y3H7q', 'active', NULL, '2023-06-03 19:31:04', '2023-06-03 19:31:04'),
-(4, 'new 2', 'agentaa@mail.com', '12312312312', 'agent', 'asdasdad', NULL, '$2y$10$v72gulp9BK0dF97goNQP4Oz11900UdA3tRyWPjgBQP70AeJOs/6LW', 'active', NULL, '2023-06-03 19:35:32', '2023-06-03 19:58:59');
+(4, 'new 2', 'agentaa@mail.com', '12312312312', 'agent', 'asdasdad', NULL, '$2y$10$v72gulp9BK0dF97goNQP4Oz11900UdA3tRyWPjgBQP70AeJOs/6LW', 'active', NULL, '2023-06-03 19:35:32', '2023-06-03 19:58:59'),
+(5, 'my full name', 'me@mydomain.com', '12312312312', 'agent', 'test', NULL, '$2y$10$LrfJlihXPszvBMGs3/7Jbu9bXCFzRsf9s9Nq4U8TPdD/7ENDViwSq', 'active', NULL, '2023-06-04 10:56:30', '2023-06-04 10:56:30'),
+(6, 'Agent', 'agentmail@mail.com', '01234567890', 'agent', 'New', NULL, '$2y$10$nJwiEU7h/4qWP2EHFYoiL.EeUaKt8fjf2iHEATFGQRAxKUopG3im2', 'active', NULL, '2023-06-04 11:19:21', '2023-06-04 11:19:21');
 
 --
 -- Indexes for dumped tables
@@ -261,15 +268,13 @@ ALTER TABLE `abouts`
 -- Indexes for table `agent__requests`
 --
 ALTER TABLE `agent__requests`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `agent__requests_mail_unique` (`mail`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `contacts_mail_unique` (`mail`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -331,13 +336,13 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `agent__requests`
 --
 ALTER TABLE `agent__requests`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -373,7 +378,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
