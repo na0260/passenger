@@ -25,7 +25,7 @@ class AgentRequestController extends Controller
         $agent->city = $request->city;
         $agent->message = $request->message;
         $agent->save();
-        return redirect()->back()->with('msg', 'Your request is been sent. our support team will contact with you as soon as possible.');
+        return redirect()->back()->with('msg', 'Your request has been sent. our support team will contact with you as soon as possible.');
     }
 
     public function manage()

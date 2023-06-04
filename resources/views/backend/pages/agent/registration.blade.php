@@ -15,35 +15,50 @@
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-user'></i></span>
                                                 <input type="text" class="form-control" id="input49"
-                                                       placeholder="Agent Name" name="name">
+                                                       placeholder="Agent Name" name="name" required>
                                             </div>
+                                            @error('name')
+                                            <span class="text-danger">{{$message}}</span><br>
+                                            @enderror
                                         </div>
+
                                     </div>
                                     <div class="row mb-3">
                                         <label for="input50" class="col-sm-3 col-form-label">Phone No</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-microphone'></i></span>
-                                                <input type="text" class="form-control" id="input50" placeholder="Phone No" name="phone">
+                                                <input type="text" class="form-control" id="input50" placeholder="Phone No" name="phone" required>
                                             </div>
+                                            @error('phone')
+                                            <span class="text-danger">{{$message}}</span><br>
+                                            @enderror
                                         </div>
+
                                     </div>
                                     <div class="row mb-3">
                                         <label for="input51" class="col-sm-3 col-form-label">Email Address</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bx-envelope'></i></span>
-                                                <input type="text" class="form-control" id="input51" placeholder="Email" name="email">
+                                                <input type="text" class="form-control" id="input51" placeholder="Email" name="email" required>
                                             </div>
+                                            @error('email')
+                                            <span class="text-danger">{{$message}}</span><br>
+                                            @enderror
                                         </div>
                                     </div>
+
                                     <div class="row mb-3">
                                         <label for="input51" class="col-sm-3 col-form-label">Organization name</label>
                                         <div class="col-sm-9">
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class='bx bxs-business'></i></span>
-                                                <input type="text" class="form-control" id="input51" placeholder="Organization" name="organization">
+                                                <input type="text" class="form-control" id="input51" placeholder="Organization" name="organization" required>
                                             </div>
+                                            @error('organization')
+                                            <span class="text-danger">{{$message}}</span><br>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">

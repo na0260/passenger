@@ -45,7 +45,7 @@
 
 <body>
 @error('mail')
-<span class="text-danger">{{$message}}</span><br>
+<span class="text-danger" >{{$message}}</span><br>
 @enderror
 @error('phone')
 <span class="text-danger">{{$message}}</span><br>
@@ -53,7 +53,7 @@
 @error('desc')
 <span class="text-danger">{{$message}}</span><br>
 @enderror
-<h1 class="text-success">{{Session::get('msg')}}</h1>
+<h1 class="text-success text-center">{{Session::get('msg')}}</h1>
 <x-frontend.includes.header/>
 
 {{$content}}

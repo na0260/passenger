@@ -26,7 +26,7 @@ class ContactController extends Controller
         $contact->subject = $request->subject;
         $contact->desc = $request->desc;
         $contact->save();
-        return redirect()->back();
+        return redirect()->back()->with('msg','Thank you for your feedback. Stay Connected');
     }
 
     public function manage()

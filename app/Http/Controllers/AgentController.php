@@ -19,6 +19,9 @@ class AgentController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'phone' => 'numeric|digits:11|required',
+            'organization' => ['unique:users,organization','required'],
+        ],[
+            'organization.unique' => 'The organization is already has been registered',
         ]);
         $user = new User();
         $user->name = $request->name;
