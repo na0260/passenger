@@ -73,7 +73,7 @@
                                 </li>
                                 <li> <a href="{{route('driver.register')}}"><i class="bx bx-radio-circle"></i>Driver Info</a>
                                 </li>
-                                <li> <a href="javascript:;"><i class="bx bx-radio-circle"></i>Route Info</a>
+                                <li> <a href="{{route('bus-route.register')}}"><i class="bx bx-radio-circle"></i>Route Info</a>
                                 </li>
                             </ul>
                         </li>
@@ -117,7 +117,7 @@
                                 </li>
                                 <li> <a href="{{route('driver.register')}}"><i class="bx bx-radio-circle"></i>Driver Info</a>
                                 </li>
-                                <li> <a href="javascript:;"><i class="bx bx-radio-circle"></i>Route Info</a>
+                                <li> <a href="{{route('bus-route.register')}}"><i class="bx bx-radio-circle"></i>Route Info</a>
                                 </li>
                             </ul>
                         </li>

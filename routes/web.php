@@ -11,6 +11,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\BusRouteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,7 +55,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/diver/register', [DriverController::class, 'register'])->name('driver.register');
 
-    Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
+    Route::get('/bus/route/register', [BusRouteController::class, 'register'])->name('bus-route.register');
 
 
     Route::middleware('agent')->group(function () {

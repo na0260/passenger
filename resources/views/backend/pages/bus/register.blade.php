@@ -83,69 +83,70 @@
                             </div><!---end row-->
 
                         </form>
+                    @elseif(Route::currentRouteName() == 'bus-route.register')
+                        <form>
+                            <h5 class="mb-4">Add Stations</h5>
+                            <div class="row g-3">
+                                <div class="col-12 col-lg-6">
+                                    <label for="Inputbus" class="form-label">Bus Name</label>
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example">
+                                        <option selected>---</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 1</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 2</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 3</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 4</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 5</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 6</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 7</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 8</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 9</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <label class="form-label">Station - 10</label>
+                                    <input type="text" class="form-control" placeholder="Station name">
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="btn btn-primary px-4" type="submit">Add</button>
+                                    </div>
+                                </div>
+                            </div><!---end row-->
+                        </form>
                     @endif
 
                     {{--
-                    <form>
-                        <h5 class="mb-4">Add Stations</h5>
-                        <div class="row g-3">
-                            <div class="col-12 col-lg-6">
-                                <label for="Inputbus" class="form-label">Bus Name</label>
-                                <select class="form-select" id="Inputbus" aria-label="Default select example">
-                                    <option selected>---</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 1</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 2</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 3</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 4</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 5</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 6</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 7</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 8</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 9</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <label class="form-label">Station - 10</label>
-                                <input type="text" class="form-control" placeholder="Station name">
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex align-items-center gap-3">
-                                    <button class="btn btn-outline-secondary px-4" onclick="stepper2.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
-                                    <button class="btn btn-primary px-4" onclick="stepper2.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
-                                </div>
-                            </div>
-                        </div><!---end row-->
-                    </form>--}}
+                    --}}
                 </div>
 
                 <!--start stepper two-->
