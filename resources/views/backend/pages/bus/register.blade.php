@@ -1,4 +1,4 @@
-<x-app-backend title="Bus Register | Dashboard">
+<x-app-backend title="Bus Information | Dashboard">
     <x-slot name="content">
         <div class="page-wrapper">
             <div class="page-content">
@@ -18,15 +18,18 @@
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Total stoppage</label>
-                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter total stoppage">
+                                    <input type="text" class="form-control" id="InputEmail"
+                                           placeholder="Enter total stoppage">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Start Point</label>
-                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter start point">
+                                    <input type="text" class="form-control" id="InputEmail"
+                                           placeholder="Enter start point">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">End Point</label>
-                                    <input type="text" class="form-control" id="InputEmail" placeholder="Enter end point">
+                                    <input type="text" class="form-control" id="InputEmail"
+                                           placeholder="Enter end point">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Start Time:</label>
@@ -37,7 +40,7 @@
                                     <input type="time" class="form-control">
                                 </div>
                                 <div class="col-12 col-lg-12">
-                                    <button type="submit" class="btn btn-primary px-4" >ADD</button>
+                                    <button type="submit" class="btn btn-primary px-4">ADD</button>
                                 </div>
                             </div><!---end row-->
                         </form>
@@ -73,7 +76,8 @@
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <label class="form-label">Driver Address</label>
-                                    <textarea class="form-control" placeholder="Enter driver address" rows="3"></textarea>
+                                    <textarea class="form-control" placeholder="Enter driver address"
+                                              rows="3"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">
@@ -144,9 +148,6 @@
                             </div><!---end row-->
                         </form>
                     @endif
-
-                    {{--
-                    --}}
                 </div>
 
                 <!--start stepper two-->
@@ -322,8 +323,6 @@
                     </div>
                 </div>--}}
                 <!--end stepper two-->
-
-
                 {{--<!--start stepper two-->
                 <h6 class="text-uppercase">Linear Stepper</h6>
                 <hr>
