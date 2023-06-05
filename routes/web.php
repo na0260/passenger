@@ -52,6 +52,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
+    Route::post('/bus/store', [BusController::class, 'store'])->name('bus.store');
 
     Route::get('/diver/register', [DriverController::class, 'register'])->name('driver.register');
 

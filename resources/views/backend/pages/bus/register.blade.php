@@ -5,42 +5,48 @@
 
                 <div class="card-body p-4">
                     @if(Route::currentRouteName() == 'bus.register')
-                        <form>
+                        <form action="{{route('bus.store')}}" method="Post">
+                            @csrf
                             <h5 class="mb-4">Bus Register</h5>
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="FisrtName" class="form-label">Bus Name</label>
-                                    <input type="text" class="form-control" id="FisrtName" placeholder="Bus name">
+                                    <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="name">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="PhoneNumber" class="form-label">Bus Number</label>
-                                    <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number">
+                                    <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number" name="number">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Total stoppage</label>
                                     <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter total stoppage">
+                                           placeholder="Enter total stoppage" name="total_stoppage">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Start Point</label>
                                     <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter start point">
+                                           placeholder="Enter start point" name="start_point">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">End Point</label>
                                     <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter end point">
+                                           placeholder="Enter end point" name="end_point">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Start Time:</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" class="form-control" name="start_time">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">End Time:</label>
-                                    <input type="time" class="form-control">
+                                    <input type="time" class="form-control" name="end_time">
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <button type="submit" class="btn btn-primary px-4">ADD</button>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <p class="text-success">{{Session::get('msg')}}</p>
+                                    </div>
                                 </div>
                             </div><!---end row-->
                         </form>
@@ -82,6 +88,11 @@
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">
                                         <button type="submit" class="btn btn-primary px-4">Add</button>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <p class="text-success">{{Session::get('msg')}}</p>
                                     </div>
                                 </div>
                             </div><!---end row-->

@@ -15,7 +15,13 @@ class BusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'numer'
+            'name' => 'required',
+            'number' => 'required|unique:buses,number',
+            'total_stoppage' => 'required|numeric',
+            'start_point' => 'required',
+            'end_point' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
         ]);
         $bus = new Bus();
         $bus->name = $request->name;
