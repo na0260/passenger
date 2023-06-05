@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/diver/store', [DriverController::class, 'store'])->name('driver.store');
 
     Route::get('/bus/route/register', [BusRouteController::class, 'register'])->name('bus-route.register');
+    Route::post('/bus/route/store', [BusRouteController::class, 'store'])->name('bus-route.store');
 
 
     Route::middleware('agent')->group(function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Bus;
@@ -15,8 +16,8 @@ class DriverController extends Controller
         }else{
             $bus = Bus::all()->where('organization','=',auth()->user()->organization);
         }
-
-        return view('backend.pages.bus.register',['buses'=>$bus]);
+        $user = User::all()->where('type','=','agent');
+        return view('backend.pages.bus.register',['buses'=>$bus,'users' => $user]);
     }
 
     public function store(Request $request)
@@ -30,6 +31,11 @@ class DriverController extends Controller
         ]);
         $driver = new Driver();
         $driver->bus_name = $request->bus_name;
+        if (auth()->user()->type == 'admin'){
+            $driver->organization = $request->organization;
+        }else{
+            $driver->organization = auth()->user()->organization;
+        }
         $driver->name = $request->name;
         $driver->number = $request->number;
         $driver->nid = $request->nid;

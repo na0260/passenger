@@ -71,10 +71,21 @@
                                     <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
                                         <option selected disabled>----- Select bus from below -----</option>
                                         @foreach($buses as $bus)
-                                            <option value="{{$bus->name}}-{{$bus->organization}}">{{$bus->name}} ({{$bus->organization}})</option>
+                                            <option value="{{$bus->name}}">{{$bus->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
+                                @if(Auth::user()->type == 'admin')
+                                    <div class="col-12 col-lg-6">
+                                        <label for="orgName" class="form-label">Bus Organization</label>
+                                        <select class="form-select" id="orgName" aria-label="Default select example" name="organization" required>
+                                            <option selected disabled>----- Select organization from below -----</option>
+                                            @foreach($users as $user)
+                                                <option value="{{$user->organization}}">{{$user->organization}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driver Name</label>
                                     <input type="text" class="form-control" placeholder="Enter driver name" name="name">
@@ -111,7 +122,8 @@
 
                         </form>
                     @elseif(Route::currentRouteName() == 'bus-route.register')
-                        <form>
+                        <form action="{{route('bus-route.store')}}" method="Post">
+                            @csrf
                             <h5 class="mb-4">Add Stations</h5>
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
@@ -119,53 +131,69 @@
                                     <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
                                         <option selected disabled>----- Select bus from below -----</option>
                                         @foreach($buses as $bus)
-                                            <option value="{{$bus->name}}.'-'.{{$bus->organization}}">{{$bus->name}}.'-'.{{$bus->organization}}</option>
+                                            <option value="{{$bus->name}}">{{$bus->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
+                                @if(Auth::user()->type == 'admin')
+                                    <div class="col-12 col-lg-6">
+                                        <label for="orgName" class="form-label">Bus Organization</label>
+                                        <select class="form-select" id="orgName" aria-label="Default select example" name="organization" required>
+                                            <option selected disabled>----- Select organization from below -----</option>
+                                            @foreach($users as $user)
+                                                <option value="{{$user->organization}}">{{$user->organization}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 1</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_01">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 2</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_02">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 3</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_03">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 4</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_04">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 5</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_05">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 6</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_06">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 7</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_07">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 8</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_08">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 9</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_09">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 10</label>
-                                    <input type="text" class="form-control" placeholder="Station name">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_10">
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">
                                         <button class="btn btn-primary px-4" type="submit">Add</button>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <p class="text-success">{{Session::get('msg')}}</p>
                                     </div>
                                 </div>
                             </div><!---end row-->
