@@ -23,7 +23,7 @@
                     class="col-md-6 track-right wow fadeInLeft animated"
                     data-wow-delay=".5s"
                 >
-                    <a href="track.html"
+                    <a
                     >
                         <i class="fa fa-columns img-responsive"></i></a>
                 </div>
@@ -33,7 +33,7 @@
                 >
                     <h3>FIND MY BUS</h3>
                     <p>All buses route information in one click</p>
-                    <a class="learn" href="#">Find Bus</a>
+                    <a class="learn" href="{{route('bus-routes')}}">Find Bus</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -46,7 +46,7 @@
                     class="col-md-6 track-right wow fadeInLeft animated"
                     data-wow-delay=".5s"
                 >
-                    <a href="track.html"
+                    <a
                     ><img alt="" class="img-responsive" src="{{asset('assets/frontend/images/map1.png')}}"
                         /></a>
                 </div>
@@ -73,8 +73,8 @@
                         <a href="#"><i class="fa fa-truck"></i></a>
                     </div>
                     <div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-                        <h3>80000</h3>
-                        <p>ROUTES</p>
+                        <h3>{{$buses->count()}}</h3>
+                        <p>Total Buses</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -83,8 +83,8 @@
                         <a href="#"><i class="fa fa-ticket"></i></a>
                     </div>
                     <div class="rou-rgt">
-                        <h3>1900</h3>
-                        <p>BUSES</p>
+                        <h3>{{$routes->count()}}</h3>
+                        <p>Total Routes</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -96,8 +96,8 @@
                         <a href="#"><i class="fa fa-user"></i></a>
                     </div>
                     <div class="rou-rgt">
-                        <h3>{{$agent_count}}</h3>
-                        <p>Total Agent</p>
+                        <h3>{{$agents->count()}}</h3>
+                        <p>Total Agents</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
