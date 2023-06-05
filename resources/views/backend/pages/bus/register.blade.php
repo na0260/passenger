@@ -13,6 +13,12 @@
                                     <label for="FisrtName" class="form-label">Bus Name</label>
                                     <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="name">
                                 </div>
+                                @if(Auth::user()->type == 'admin')
+                                    <div class="col-12 col-lg-6">
+                                        <label for="FisrtName" class="form-label">Bus Organization</label>
+                                        <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="organization">
+                                    </div>
+                                @endif
                                 <div class="col-12 col-lg-6">
                                     <label for="PhoneNumber" class="form-label">Bus Number</label>
                                     <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number" name="number">
@@ -51,39 +57,40 @@
                             </div><!---end row-->
                         </form>
                     @elseif(Route::currentRouteName() == 'driver.register')
-                        <form>
+                        <form action="{{route('driver.store')}}" method="Post">
+                            @csrf
                             <h5 class="mb-4">Driver Information</h5>
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="Inputbus" class="form-label">Bus Name</label>
-                                    <select class="form-select" id="Inputbus" aria-label="Default select example">
-                                        <option selected>---</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
+                                        <option selected disabled>----- Select from below -----</option>
+                                        @foreach($buses as $bus)
+                                            <option value="{{$bus->name}}">{{$bus->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driver Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter driver name">
+                                    <input type="text" class="form-control" placeholder="Enter driver name" name="name">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="" class="form-label">Driver Contact</label>
-                                    <input type="text" class="form-control" placeholder="01XXXXXXXXX">
+                                    <input type="text" class="form-control" placeholder="01XXXXXXXXX" name="number">
                                 </div>
 
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driver NID</label>
-                                    <input type="text" class="form-control" placeholder="Enter driver NID number">
+                                    <input type="text" class="form-control" placeholder="Enter driver NID number" name="nid">
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driving Licence no.</label>
-                                    <input type="text" class="form-control" placeholder="Enter driving licence no.">
+                                    <input type="text" class="form-control" placeholder="Enter driving licence no." name="driving_license">
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <label class="form-label">Driver Address</label>
                                     <textarea class="form-control" placeholder="Enter driver address"
-                                              rows="3"></textarea>
+                                              rows="3" name="address"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">

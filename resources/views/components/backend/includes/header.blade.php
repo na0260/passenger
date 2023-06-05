@@ -44,7 +44,7 @@
                     <i class='bx bx-user-circle'></i>
                     <div class="user-info">
                         <p class="user-name mb-0">{{ Auth::user()->name }}</p>
-                        <p class="designattion mb-0">Role</p>
+                        <p class="designattion mb-0">{{ Auth::user()->type == 'admin' ? 'Admin' : Auth::user()->organization }}</p>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">

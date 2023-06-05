@@ -25,6 +25,11 @@ class BusController extends Controller
         ]);
         $bus = new Bus();
         $bus->name = $request->name;
+        if (auth()->user()->type == 'admin'){
+            $bus->organization = $request->organization;
+        }else{
+            $bus->organization = auth()->user()->organization;
+        }
         $bus->number = $request->number;
         $bus->total_stoppage= $request->total_stoppage;
         $bus->start_point = $request->start_point;
