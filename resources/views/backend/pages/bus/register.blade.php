@@ -69,9 +69,9 @@
                                 <div class="col-12 col-lg-6">
                                     <label for="Inputbus" class="form-label">Bus Name</label>
                                     <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
-                                        <option selected disabled>----- Select from below -----</option>
+                                        <option selected disabled>----- Select bus from below -----</option>
                                         @foreach($buses as $bus)
-                                            <option value="{{$bus->name}}">{{$bus->name}}</option>
+                                            <option value="{{$bus->name}}-{{$bus->organization}}">{{$bus->name}} ({{$bus->organization}})</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -116,11 +116,11 @@
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="Inputbus" class="form-label">Bus Name</label>
-                                    <select class="form-select" id="Inputbus" aria-label="Default select example">
-                                        <option selected>---</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
+                                        <option selected disabled>----- Select bus from below -----</option>
+                                        @foreach($buses as $bus)
+                                            <option value="{{$bus->name}}.'-'.{{$bus->organization}}">{{$bus->name}}.'-'.{{$bus->organization}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12 col-lg-6">
