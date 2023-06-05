@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
+            $table->string('bus_name');
+            $table->string('name');
+            $table->text('number');
+            $table->text('nid');
+            $table->text('driving_license');
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }
