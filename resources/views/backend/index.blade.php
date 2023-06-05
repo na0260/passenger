@@ -14,7 +14,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Buses</p>
-                                                        <h5 class="my-0">8052</h5>
+                                                        <h5 class="my-0">{{$buses->count()}}</h5>
                                                     </div>
                                                     <div class="text-primary ms-auto font-30"><i class='bx bx-bus'></i>
                                                     </div>
@@ -28,7 +28,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Routes</p>
-                                                        <h5 class="my-0">6.2K</h5>
+                                                        <h5 class="my-0">{{$routes->count()}}</h5>
                                                     </div>
                                                     <div class="text-danger ms-auto font-30"><i class='bx bx-stats' ></i>
                                                     </div>
@@ -42,7 +42,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Users</p>
-                                                        <h5 class="my-0">{{$user_count}}</h5>
+                                                        <h5 class="my-0">{{$users->count()}}</h5>
                                                     </div>
                                                     <div class="text-success ms-auto font-30"><i class='bx bx-group'></i>
                                                     </div>
@@ -56,7 +56,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <div>
                                                         <p class="mb-0 text-secondary font-14">Total Agents</p>
-                                                        <h5 class="my-0">{{$agent_count}}</h5>
+                                                        <h5 class="my-0">{{$agents->count()}}</h5>
                                                     </div>
                                                     <div class="text-warning ms-auto font-30"><i class='bx bxs-business'></i>
                                                     </div>
@@ -87,8 +87,17 @@
                     <div class="col-12 col-lg-4">
                         <div class="card radius-10">
                             <ul class="list-group list-group-flush">
-                                @foreach($organizations as $organization)
-                                    <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center border-top">{{$organization->organization}} <span class="badge bg-danger rounded-pill">{{random_int(1000, 9999)}}</span>
+                                @foreach($agents as $agent)
+                                    <li class="list-group-item d-flex bg-transparent justify-content-between align-items-center border-top">{{$agent->organization}} <span class="badge bg-danger rounded-pill">
+                                            @php
+                                            $count = 0;
+                                            foreach($buses as $bus){
+                                                if($bus->organization == $agent->organization)
+                                                    $count++;
+                                            }
+                                            @endphp
+                                            {{$count}}
+                                        </span>
                                     </li>
                                 @endforeach
 

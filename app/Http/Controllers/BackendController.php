@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Bus;
+use App\Models\BusRoute;
 
 class BackendController extends Controller
 {
     public function index()
     {
-        $user = User::all()->count();
-        $agent = User::all()->where('type','=','agent')->count();
-        $organization = User::get()->where('type','=','agent');
-        return view('backend.index',['user_count'=>$user,'agent_count'=>$agent, 'organizations'=>$organization]);
+        $user = User::all();
+        $agent = User::all()->where('type','=','agent');
+        $bus = Bus::all();
+        $route = BusRoute::all();
+        return view('backend.index',['users'=>$user,'agents'=>$agent,'buses'=>$bus,'routes'=>$route]);
     }
 }
