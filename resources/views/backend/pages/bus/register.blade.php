@@ -15,8 +15,13 @@
                                 </div>
                                 @if(Auth::user()->type == 'admin')
                                     <div class="col-12 col-lg-6">
-                                        <label for="FisrtName" class="form-label">Bus Organization</label>
-                                        <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="organization">
+                                        <label for="orgName" class="form-label">Bus Organization</label>
+                                        <select class="form-select" id="orgName" aria-label="Default select example" name="organization" required>
+                                            <option selected disabled>----- Select organization from below -----</option>
+                                            @foreach($users as $user)
+                                                <option value="{{$user->organization}}">{{$user->organization}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 @endif
                                 <div class="col-12 col-lg-6">

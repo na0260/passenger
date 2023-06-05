@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bus;
+use App\Models\User;
 
 class BusController extends Controller
 {
     public function register()
     {
-        return view('backend.pages.bus.register');
+        $user = User::all()->where('type','=','agent');
+        return view('backend.pages.bus.register',['users' => $user]);
     }
 
     public function store(Request $request)
