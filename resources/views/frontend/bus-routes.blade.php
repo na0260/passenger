@@ -59,7 +59,7 @@
                         </li>
                         <li class="seat">
                             <div class="bus-txt3">
-                                <h4>{{$bus->start_point}} to{{$bus->end_point}}</h4>
+                                <h4>{{$bus->start_point}} to {{$bus->end_point}}</h4>
                                 @foreach($routes as $route)
                                     @if($route->bus_name == $bus->name && $route->organization == $bus->organization)
                                         <p>{{$route->station_01}} ⇄ {{$route->station_02}} ⇄ {{$route->station_03}} ⇄ {{$route->station_04}} ⇄ {{$route->station_05}} ⇄ {{$route->station_06}}
