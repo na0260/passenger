@@ -32,7 +32,8 @@ class FrontendController extends Controller
         return view('frontend.bus-routes',['buses'=>$bus,'routes'=>$route]);
     }
     public function bus_search(){
-        return view('frontend.bus-search');
+        $bus = Bus::all();
+        return view('frontend.bus-search',['buses'=>$bus]);
     }
     public function privacy(){
         $privacy = Privacy::all()->first();

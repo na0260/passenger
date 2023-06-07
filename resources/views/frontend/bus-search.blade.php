@@ -26,27 +26,36 @@
             <div class="col-md-7 bann-info">
                 <h2>Find Buses for Your Desire Route</h2>
                 <div class="ban-top">
-                    <form>
+                    <form action="" method="Post">
+                        @csrf
                         <div class="bnr-left">
-                            <label class="inputLabel">From</label>
-                            <input class="city" type="text" value="Enter a city"
-                                   onfocus="this.value = '';" onblur="if (this.value == '')
-              {this.value = 'Enter a city';}" required=>
+                            <label class="Inputstart">From</label><br>
+                            <select class="form-select city" id="Inputbus" aria-label="Default select example"
+                                    name="start_point" required>
+                                <option selected disabled>----- Select any Area from below -----</option>
+                                @foreach($buses as $bus)
+                                    <option value="{{$bus->start_point}}">{{$bus->start_point}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="bnr-left">
-                            <label class="inputLabel">To</label>
-                            <input class="city" type="text" value="Enter a city"
-                                   onfocus="this.value = '';" onblur="if (this.value == '')
-              {this.value = 'Enter a city';}" required=>
+                            <label class="Inputend">To</label> <br>
+                            <select class="form-select city" id="Inputbus" aria-label="Default select example"
+                                    name="end_point" required>
+                                <option selected disabled>----- Select any Area from below -----</option>
+                                @foreach($buses as $bus)
+                                    <option value="{{$bus->end_point}}">{{$bus->end_point}}</option>
+                                @endforeach
+                            </select>
                         </div>
+
                         <div class="clearfix"></div>
+                        <div class="sear">
+                            <button type="submit" class="seabtn">Find Buses</button>
+                        </div>
                     </form>
                 </div>
-                <div class="sear">
-                    <form action="bus.html">
-                        <button class="seabtn">Find Buses</button>
-                    </form>
-                </div>
+
             </div>
             <div class="clearfix"></div>
         </div>
