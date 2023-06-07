@@ -58,7 +58,7 @@
 
 {{$content}}
 
-<x-frontend.includes.footer :agents="$agents"/>
+<x-frontend.includes.footer :agents="$agents" :start="$start" :end="$end"/>
 
 <x-frontend.includes.copyright/>
 

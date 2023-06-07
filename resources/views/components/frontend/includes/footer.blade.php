@@ -8,10 +8,11 @@
             <h3>Bus Operators</h3>
             <ul>
                 @php
-                $count = 0;
-                foreach($agents as $agent){
-                    $count++;
-                @endphp<li><a href="bus.html">{{$agent}} </a></li>@php
+                    $count = 0;
+                    foreach($agents as $agent){
+                        $count++;
+                @endphp
+                <li><a href="bus.html">{{$agent}} </a></li>@php
                     if($count == 15){
                         break;
                     }
@@ -28,15 +29,17 @@
             <ul>
                 @php
                     $count = 0;
-                    foreach($agents as $agent){
-                        $count++;
-                @endphp<li><a href="bus.html">{{$agent}} </a></li>@php
+
+                    foreach($start as $index => $start_p){
+
+                            $count++;
+                @endphp
+                <li><a>{{$start[$index]->start_point}}-{{$end[$index]->end_point}}</a></li>@php
                     if($count == 15){
                         break;
                     }
                 }
                 @endphp
-                <li><a href="routes.html">Alabama-California</a></li>
                 <div class="clearfix"></div>
             </ul>
         </div>
