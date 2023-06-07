@@ -26,7 +26,7 @@
             <div class="col-md-7 bann-info">
                 <h2>Find Buses for Your Desire Route</h2>
                 <div class="ban-top">
-                    <form action="" method="Post">
+                    <form action="{{route('search')}}" method="Post">
                         @csrf
                         <div class="bnr-left">
                             <label class="Inputstart">From</label><br>

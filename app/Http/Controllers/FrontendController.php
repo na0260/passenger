@@ -35,6 +35,15 @@ class FrontendController extends Controller
         $bus = Bus::all();
         return view('frontend.bus-search',['buses'=>$bus]);
     }
+
+    public function search(Request $request)
+    {
+        $start = $request->start_point;
+        $end = $request->end_point;
+        $bus = Bus::where('start_point','=',$start)->where('end_point','=',$end)->get();
+        $route = BusRoute::all();
+        return view('frontend.bus-routes',['buses'=>$bus,'routes'=>$route]);
+    }
     public function privacy(){
         $privacy = Privacy::all()->first();
         return view('frontend.privacy',['privacy'=>$privacy]);
