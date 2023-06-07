@@ -9,6 +9,7 @@ use App\Models\Privacy;
 use App\Models\Terms;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -26,7 +27,9 @@ class FrontendController extends Controller
         return view('frontend.agent-reg');
     }
     public function bus_routes(){
-        return view('frontend.bus-routes');
+        $bus = Bus::all();
+        $route = BusRoute::all();
+        return view('frontend.bus-routes',['buses'=>$bus,'routes'=>$route]);
     }
     public function bus_search(){
         return view('frontend.bus-search');
