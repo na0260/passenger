@@ -9,7 +9,6 @@ use App\Models\Privacy;
 use App\Models\Terms;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
