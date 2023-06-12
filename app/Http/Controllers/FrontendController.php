@@ -35,6 +35,13 @@ class FrontendController extends Controller
         return view('frontend.bus-search',['buses'=>$bus]);
     }
 
+    public function track()
+    {
+        $bus = Bus::all();
+        $route = BusRoute::all();
+        return view('frontend.track',['buses'=>$bus,'routes'=>$route]);
+    }
+
     public function search(Request $request)
     {
         $start = $request->start_point;

@@ -80,7 +80,7 @@
 
                     </ul>
                     <ul>
-                        <li><a href="#"><i class='bx bx-radio-circle'></i>Tracking</a>
+                        <li><a href="{{route('bus-route.track')}}"><i class='bx bx-radio-circle'></i>Tracking</a>
                         </li>
                     </ul>
                     <ul>

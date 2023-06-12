@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\BusRouteController;
+use App\Http\Controllers\BusTrackingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,7 @@ Route::get('/search-bus', [FrontendController::class, 'bus_search'])->name('bus-
 Route::post('/search-bus-information', [FrontendController::class, 'search'])->name('search');
 Route::get('/privacy-policy', [FrontendController::class, 'privacy'])->name('privacy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
+Route::get('/bus-tracking', [FrontendController::class, 'track'])->name('bus.track');
 
 //Route::get('/dashboard', function () {
 //    return view('backend.index');
@@ -60,6 +62,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/bus/route/register', [BusRouteController::class, 'register'])->name('bus-route.register');
     Route::post('/bus/route/store', [BusRouteController::class, 'store'])->name('bus-route.store');
+
+    Route::get('/bus/route/tracking', [BusTrackingController::class, 'track'])->name('bus-route.track');
 
 
     Route::middleware('agent')->group(function () {

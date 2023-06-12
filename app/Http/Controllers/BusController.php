@@ -42,4 +42,5 @@ class BusController extends Controller
 
         return redirect()->back()->with('msg','Bus has been registered successfully.');
     }
+
 }
