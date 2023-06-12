@@ -11,22 +11,22 @@
         </div>
         <!--- /banner-1 ---->
         <!--- bus-tp ---->
-        {{--<div class="bus-tp">
+        <div class="bus-tp">
             <div class="container">
-                <h2 class="text-center">Buses from Mirpur 1 to Banasree</h2>
+                <h2 class="text-center">Bus tracking Information</h2>
                 <div class="clearfix"></div>
             </div>
-        </div>--}}
+        </div>
         <!--- /bus-tp ---->
         <!--- bus-btm ---->
         <div class="bus-btm">
             <div class="container">
                 <ul>
-                    <li class="trav"><a >Buses</a></li>
-                    <li class="dept"><a >Start Time</a></li>
-                    <li class="arriv"><a >End Time</a></li>
-                    <li class="seat"><a >Routes</a></li>
-                    <li class="fare"><a >Action</a></li>
+                    <li class="trav"><a href="#">Bus Name</a></li>
+                    <li class="dept"><a href="#">Bus Number</a></li>
+                    <li class="arriv"><a href="#">Last Stoppage</a></li>
+                    <li class="seat"><a href="#">Next Stoppage</a></li>
+                    <li class="fare"><a href="#">Left at</a></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -72,8 +72,8 @@
                         </li>
                         <li class="fare">
                             <div class="bus-txt4">
-                                <a class="view" href="#">Bus Details</a>
-                                <a class="view" href="#">Click to track</a>
+                                <h4>BDT 60</h4>
+                                <a class="view" href="#img1">Click to track</a>
                             </div>
                         </li>
                         <div class="clearfix"></div>

@@ -25,7 +25,7 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->agent = User::all()->where('type','=','agent')->pluck('organization');
+        $this->agent = User::where('type','=','agent')->orderBy('organization')->pluck('organization');
         $this->start = DB::table('buses')->distinct()->get(['start_point']);
         $this->end = DB::table('buses')->distinct()->get(['end_point']);
         view()->composer('components.app', function($view) {
