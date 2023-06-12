@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Driver;
 use Illuminate\Http\Request;
 use App\Models\Bus;
 use App\Models\User;
@@ -43,4 +44,16 @@ class BusController extends Controller
         return redirect()->back()->with('msg','Bus has been registered successfully.');
     }
 
+    public function manage()
+    {
+        if (auth()->user()->type == 'admin'){
+            $bus = Bus::all();
+            $driver = Driver::all();
+        }else{
+            $bus = Bus::all()->where('organization','=',auth()->user()->organization);
+            $driver = Driver::all()->where('organization','=',auth()->user()->organization);
+        }
+        $user = User::all()->where('type','=','agent');
+        return view('backend.pages.bus.manage',['buses'=>$bus,'drivers'=>$driver]);
+    }
 }

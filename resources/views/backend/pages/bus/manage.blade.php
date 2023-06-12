@@ -11,8 +11,11 @@
                                 <thead>
                                 <tr>
                                     <th width="5%">Sn.</th>
-                                    <th>Bus Name</th>
-                                    <th>Bus Number</th>
+                                    <th>Bus name</th>
+                                    @if(auth()->user()->type == 'admin')
+                                        <th>Bus organization</th>
+                                    @endif
+                                    <th>Bus number</th>
                                     <th>Driver Name</th>
                                     <th>Driver Number</th>
                                     <th>Last Stoppage</th>
@@ -20,19 +23,44 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
+                                @foreach($buses as $bus)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->phone}}</td>
-                                        <td>{{$user->organization}}</td>
-                                        <td>{{$user->created_at}}</td>
-                                        <td><div class="form-check form-switch"><a class="text-decoration-none" href="{{route('agent.status.update',$user->id)}}">
-                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                                                        {{$user->status == 'active' ? 'checked' : ''}}>
+                                        <td>{{$bus->name}}</td>
+                                        @if(auth()->user()->type == 'admin')
+                                            <td>{{$bus->organization}}</td>
+                                        @endif
+                                        <td>{{$bus->number}}</td>
+                                        @php
+                                        $count = 0;
+                                        $size = $drivers->count();
+                                        @endphp
+                                        @foreach($drivers as $driver)
+                                            @php
+                                            $count++;
+                                            @endphp
+                                            @if($bus->name == $driver->bus_name & $bus->organization == $driver->organization)
+                                                <td>{{$driver->name}}</td>
+                                                <td>{{$driver->number}}</td>
+                                                @break
+                                            @endif
+                                            @if($count == $size)
+                                                <td>---</td>
+                                                <td>---</td>
+                                            @endif
+                                        @endforeach
+                                        <td>null</td>
+                                        <td>
+                                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Action
                                                 </a>
-                                            </div>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="">Edit</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="{{route('bus-route.track',$bus->id)}}">Track</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </td>
                                         {{--                                        <td><a href="{{route('agent.delete',$agent->id)}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>--}}
                                     </tr>
@@ -41,8 +69,11 @@
                                 <tfoot>
                                 <tr>
                                     <th width="5%">Sn.</th>
-                                    <th>Bus Name</th>
-                                    <th>Bus Number</th>
+                                    <th>Bus name</th>
+                                    @if(auth()->user()->type == 'admin')
+                                        <th>Bus organization</th>
+                                    @endif
+                                    <th>Bus number</th>
                                     <th>Driver Name</th>
                                     <th>Driver Number</th>
                                     <th>Last Stoppage</th>

@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/bus/register', [BusController::class, 'register'])->name('bus.register');
+    Route::get('/bus/list', [BusController::class, 'manage'])->name('bus.manage');
     Route::post('/bus/store', [BusController::class, 'store'])->name('bus.store');
 
     Route::get('/diver/register', [DriverController::class, 'register'])->name('driver.register');
@@ -63,7 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/bus/route/register', [BusRouteController::class, 'register'])->name('bus-route.register');
     Route::post('/bus/route/store', [BusRouteController::class, 'store'])->name('bus-route.store');
 
-    Route::get('/bus/route/tracking', [BusTrackingController::class, 'track'])->name('bus-route.track');
+    Route::get('/bus/route/tracking/{$id}', [BusTrackingController::class, 'track'])->name('bus-route.track');
 
 
     Route::middleware('agent')->group(function () {
