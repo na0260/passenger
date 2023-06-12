@@ -62,7 +62,6 @@
                                                 </ul>
                                             </li>
                                         </td>
-                                        {{--                                        <td><a href="{{route('agent.delete',$agent->id)}}" class="btn btn-outline-danger px-2 rounded-0">&#10005;</a></td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>

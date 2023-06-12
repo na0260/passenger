@@ -64,7 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/bus/route/register', [BusRouteController::class, 'register'])->name('bus-route.register');
     Route::post('/bus/route/store', [BusRouteController::class, 'store'])->name('bus-route.store');
 
-    Route::get('/bus/route/tracking/{$id}', [BusTrackingController::class, 'track'])->name('bus-route.track');
+    Route::get('/bus/route/tracking-{id}', [BusTrackingController::class, 'track'])->name('bus-route.track');
 
 
     Route::middleware('agent')->group(function () {
