@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 07, 2023 at 01:34 PM
+-- Generation Time: Jun 13, 2023 at 10:14 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -79,13 +79,12 @@ INSERT INTO `agent__requests` (`id`, `name`, `mail`, `organization`, `phone`, `c
 CREATE TABLE `buses` (
   `id` bigint UNSIGNED NOT NULL,
   `organization` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `number` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `total_stoppage` int NOT NULL,
-  `start_point` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `end_point` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `start_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `end_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_point` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `end_point` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `end_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -94,11 +93,13 @@ CREATE TABLE `buses` (
 -- Dumping data for table `buses`
 --
 
-INSERT INTO `buses` (`id`, `organization`, `name`, `number`, `total_stoppage`, `start_point`, `end_point`, `start_time`, `end_time`, `created_at`, `updated_at`) VALUES
-(1, 'New', 'Bus-1', 'D-XXXX', 10, 'XXX', 'YYY', '06:00', '23:00', '2023-06-05 11:25:58', '2023-06-05 11:25:58'),
-(2, 'test', 'Bus-1', 'DM - 123122', 5, 'X', 'Y', '06:00', '23:00', '2023-06-05 11:33:51', '2023-06-05 11:33:51'),
-(3, 'X transport', 'XBus - 1', 'DM - ka XX-XXXX', 10, 'X', 'Y', '06:00', '23:00', '2023-06-05 12:19:48', '2023-06-05 12:19:48'),
-(4, 'X transport', 'XBus - 2', 'DM - ka XX-XXXY', 5, 'A', 'Z', '06:00', '13:00', '2023-06-05 12:39:08', '2023-06-05 12:39:08');
+INSERT INTO `buses` (`id`, `organization`, `name`, `number`, `start_point`, `end_point`, `start_time`, `end_time`, `created_at`, `updated_at`) VALUES
+(1, 'New', 'Bus-1', 'D-XXXX', 'XXX', 'YYY', '06:00', '23:00', '2023-06-05 11:25:58', '2023-06-05 11:25:58'),
+(2, 'test', 'Bus-1', 'DM - 123122', 'X', 'Y', '06:00', '23:00', '2023-06-05 11:33:51', '2023-06-05 11:33:51'),
+(3, 'X transport', 'XBus - 1', 'DM - ka XX-XXXX', 'X', 'Y', '06:00', '23:00', '2023-06-05 12:19:48', '2023-06-05 12:19:48'),
+(4, 'X transport', 'XBus - 2', 'DM - ka XX-XXXY', 'A', 'Z', '06:00', '13:00', '2023-06-05 12:39:08', '2023-06-05 12:39:08'),
+(5, 'New', 'new Bus', 'asAdadsa', 'ASD', 'DSA', '06:00', '06:00', '2023-06-13 21:19:53', '2023-06-13 21:19:53'),
+(6, 'New', 'new 2', 'fgfgf', 'asdasd', 'fdfsdfs', '06:00', '12:06', '2023-06-13 21:21:28', '2023-06-13 21:21:28');
 
 -- --------------------------------------------------------
 
@@ -108,18 +109,18 @@ INSERT INTO `buses` (`id`, `organization`, `name`, `number`, `total_stoppage`, `
 
 CREATE TABLE `bus_routes` (
   `id` bigint UNSIGNED NOT NULL,
-  `organization` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bus_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `station_01` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `station_02` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `station_03` text COLLATE utf8mb4_unicode_ci,
-  `station_04` text COLLATE utf8mb4_unicode_ci,
-  `station_05` text COLLATE utf8mb4_unicode_ci,
-  `station_06` text COLLATE utf8mb4_unicode_ci,
-  `station_07` text COLLATE utf8mb4_unicode_ci,
-  `station_08` text COLLATE utf8mb4_unicode_ci,
-  `station_09` text COLLATE utf8mb4_unicode_ci,
-  `station_10` text COLLATE utf8mb4_unicode_ci,
+  `organization` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bus_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `station_01` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `station_02` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `station_03` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_04` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_05` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_06` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_07` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_08` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_09` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `station_10` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -130,7 +131,31 @@ CREATE TABLE `bus_routes` (
 
 INSERT INTO `bus_routes` (`id`, `organization`, `bus_name`, `station_01`, `station_02`, `station_03`, `station_04`, `station_05`, `station_06`, `station_07`, `station_08`, `station_09`, `station_10`, `created_at`, `updated_at`) VALUES
 (1, 'New', 'Bus-1', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', '2023-06-05 12:08:09', '2023-06-05 12:08:09'),
-(2, 'X transport', 'XBus - 1', '1', '2', '3', '4', '5', NULL, NULL, NULL, NULL, NULL, '2023-06-05 12:21:30', '2023-06-05 12:21:30');
+(2, 'X transport', 'XBus - 1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '2023-06-05 12:21:30', '2023-06-05 12:21:30'),
+(3, 'New', 'new 2', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '2023-06-13 21:28:03', '2023-06-13 21:28:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bus_trackings`
+--
+
+CREATE TABLE `bus_trackings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `bus_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `organization` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_stoppage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  `next_stoppage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bus_trackings`
+--
+
+INSERT INTO `bus_trackings` (`id`, `bus_name`, `organization`, `last_stoppage`, `next_stoppage`, `created_at`, `updated_at`) VALUES
+(1, 'new 2', 'New', 'w', 't', '2023-06-13 21:21:28', '2023-06-13 22:00:50');
 
 -- --------------------------------------------------------
 
@@ -167,13 +192,13 @@ INSERT INTO `contacts` (`id`, `name`, `mail`, `phone`, `subject`, `desc`, `creat
 
 CREATE TABLE `drivers` (
   `id` bigint UNSIGNED NOT NULL,
-  `organization` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bus_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `number` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nid` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `driving_license` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci,
+  `organization` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bus_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nid` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `driving_license` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -232,7 +257,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2023_06_01_171251_create_views_table', 5),
 (20, '2023_06_01_194038_create_buses_table', 6),
 (21, '2023_06_04_184425_create_drivers_table', 6),
-(22, '2023_06_04_184441_create_bus_routes_table', 6);
+(22, '2023_06_04_184441_create_bus_routes_table', 6),
+(25, '2023_06_12_224505_create_bus_trackings_table', 7);
 
 -- --------------------------------------------------------
 
@@ -376,6 +402,12 @@ ALTER TABLE `bus_routes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bus_trackings`
+--
+ALTER TABLE `bus_trackings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
@@ -453,13 +485,19 @@ ALTER TABLE `agent__requests`
 -- AUTO_INCREMENT for table `buses`
 --
 ALTER TABLE `buses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `bus_routes`
 --
 ALTER TABLE `bus_routes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `bus_trackings`
+--
+ALTER TABLE `bus_trackings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -483,7 +521,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
