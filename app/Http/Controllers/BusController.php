@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BusTracking;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 use App\Models\Bus;
@@ -20,26 +21,29 @@ class BusController extends Controller
         $request->validate([
             'name' => 'required',
             'number' => 'required|unique:buses,number',
-            'total_stoppage' => 'required|numeric',
             'start_point' => 'required',
             'end_point' => 'required',
             'start_time' => 'required',
             'end_time' => 'required',
         ]);
         $bus = new Bus();
+        $track = new BusTracking();
         $bus->name = $request->name;
+        $track->bus_name = $request->name;
         if (auth()->user()->type == 'admin'){
             $bus->organization = $request->organization;
+            $track->organization = $request->organization;
         }else{
             $bus->organization = auth()->user()->organization;
+            $track->organization = auth()->user()->organization;
         }
         $bus->number = $request->number;
-        $bus->total_stoppage= $request->total_stoppage;
         $bus->start_point = $request->start_point;
         $bus->end_point = $request->end_point;
         $bus->start_time = $request->start_time;
         $bus->end_time = $request->end_time;
         $bus->save();
+        $track->save();
 
         return redirect()->back()->with('msg','Bus has been registered successfully.');
     }

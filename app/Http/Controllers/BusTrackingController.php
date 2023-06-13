@@ -14,13 +14,7 @@ class BusTrackingController extends Controller
     {
         $bus = Bus::find($id);
         $station = BusRoute::all();
-        if (auth()->user()->type == 'admin'){
-            $bus_all = Bus::all();
-        }else{
-            $bus_all = Bus::all()->where('organization','=',auth()->user()->organization);
-        }
-        $user = User::all()->where('type','=','agent');
-        return view('backend.pages.bus.track',['bus'=>$bus,'stations' => $station,'buses'=>$bus_all,'users'=>$user]);
+        return view('backend.pages.bus.track',['bus'=>$bus,'stations' => $station]);
     }
 
     public function store(Request $request)

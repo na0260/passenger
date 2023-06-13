@@ -120,11 +120,7 @@
 
                     </ul>
                     <ul>
-                        <li><a href="#"><i class='bx bx-radio-circle'></i>Registration</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><a href="#"><i class='bx bx-radio-circle'></i>Lists</a>
+                        <li><a href="{{route('bus.manage')}}"><i class='bx bx-radio-circle'></i>Lists</a>
 
                         </li>
                     </ul>
