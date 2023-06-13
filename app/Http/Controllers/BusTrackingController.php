@@ -16,33 +16,12 @@ class BusTrackingController extends Controller
         $station = BusRoute::all();
         return view('backend.pages.bus.track',['bus'=>$bus,'stations' => $station]);
     }
-
-    public function store(Request $request)
+    public function update(Request $request,$id)
     {
-        $track = new BusTracking();
-        $track->bus_name = $request->bus_name;
-        if (auth()->user()->type == 'admin'){
-            $track->organization = $request->organization;
-        }else{
-            $track->organization = auth()->user()->organization;
-        }
+        $bus = Bus::find($id);
+        $track = BusTracking::where('bus_name',$bus->name)->first();
         $track->last_stoppage = $request->last_stoppage;
-        $track->next_stoppage = $request->next_name;
-        $track->save();
-
-        return redirect()->back()->with('msg'.'Tracking information has been added');
-    }
-    public function update(Request $request,$bus_name)
-    {
-        $track = BusTracking::find($bus_name);
-        $track->bus_name = $request->bus_name;
-        if (auth()->user()->type == 'admin'){
-            $track->organization = $request->organization;
-        }else{
-            $track->organization = auth()->user()->organization;
-        }
-        $track->last_stoppage = $request->last_stoppage;
-        $track->next_stoppage = $request->next_name;
+        $track->next_stoppage = $request->next_stoppage;
         $track->save();
 
         return redirect()->back()->with('msg'.'Tracking information has been added');

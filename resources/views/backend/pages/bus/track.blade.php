@@ -3,7 +3,7 @@
         <div class="page-wrapper">
             <div class="page-content">
                 <div class="card-body p-4">
-                    <form action="{{route('bus-route.track.update',$bus->name)}}" method="Post">
+                    <form action="{{route('bus-route.track.update',$bus->id)}}" method="Post">
                         @csrf
                         <h5 class="mb-4">Bus Tracker</h5>
                         <div class="row g-3">
