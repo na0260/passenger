@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Bus;
 use App\Models\BusRoute;
+use App\Models\BusTracking;
 use App\Models\Privacy;
 use App\Models\Terms;
 use App\Models\User;
@@ -35,11 +36,12 @@ class FrontendController extends Controller
         return view('frontend.bus-search',['buses'=>$bus]);
     }
 
-    public function track()
+    public function track($id)
     {
-        $bus = Bus::all();
-        $route = BusRoute::all();
-        return view('frontend.track',['buses'=>$bus,'routes'=>$route]);
+        $bus = Bus::find($id);
+        $bus_all = Bus::all();
+        $track = BusTracking::all()->where('organization',$bus->organization);
+        return view('frontend.track',['buses'=>$bus_all,'tracks'=>$track]);
     }
 
     public function search(Request $request)

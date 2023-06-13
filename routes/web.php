@@ -40,7 +40,7 @@ Route::get('/search-bus', [FrontendController::class, 'bus_search'])->name('bus-
 Route::post('/search-bus-information', [FrontendController::class, 'search'])->name('search');
 Route::get('/privacy-policy', [FrontendController::class, 'privacy'])->name('privacy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
-Route::get('/bus-tracking', [FrontendController::class, 'track'])->name('bus.track');
+Route::get('/bus-tracking-{id}', [FrontendController::class, 'track'])->name('bus.track');
 
 //Route::get('/dashboard', function () {
 //    return view('backend.index');

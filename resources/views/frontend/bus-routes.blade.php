@@ -73,7 +73,7 @@
                         <li class="fare">
                             <div class="bus-txt4">
                                 <a class="view" href="#">Bus Details</a>
-                                <a class="view" href="{{route('bus.track')}}">Click to track</a>
+                                <a class="view" href="{{route('bus.track',$bus->id)}}">Click to track</a>
                             </div>
                         </li>
                         <div class="clearfix"></div>

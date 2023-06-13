@@ -37,51 +37,44 @@
              style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
             <div class="container">
                 <!--- ul-first  ---->
-                @foreach($buses as $bus)
+                @foreach($tracks as $track)
                     <ul class="first">
                         <li class="trav">
                             <div class="bus-txt">
-                                <h4>{{$bus->organization}}</h4>
-                                <p>{{$bus->name}}</p>
+                                <h4>{{$track->organization}}</h4>
+                                <p>{{$track->bus_name}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </li>
                         <li class="dept">
-                            <div class="bus-txt1">
-                                <h4><a href="#">{{$bus->start_time}}</a></h4>
-                            </div>
-
+                            @foreach($buses as $bus)
+                                @if($bus->name == $track->bus_name & $bus->organization == $track->organization)
+                                    <div class="bus-txt1">
+                                        <h4><a href="#">{{$bus->number}}</a></h4>
+                                    </div>
+                                    @break
+                                @endif
+                            @endforeach
                         </li>
                         <li class="arriv">
                             <div class="bus-txt2">
-                                <h4><a href="#">{{$bus->end_time}}</a></h4>
+                                <h4>{{$track->last_stoppage}}</h4>
                             </div>
                         </li>
                         <li class="seat">
                             <div class="bus-txt3">
-                                <h4>{{$bus->start_point}} to {{$bus->end_point}}</h4>
-                                @foreach($routes as $route)
-                                    @if($route->bus_name == $bus->name && $route->organization == $bus->organization)
-                                        <p>{{$route->station_01}} ⇄ {{$route->station_02}} ⇄ {{$route->station_03}} ⇄ {{$route->station_04}} ⇄ {{$route->station_05}} ⇄ {{$route->station_06}}
-                                            ⇄ {{$route->station_07}}
-                                            ⇄ {{$route->station_08}} ⇄ {{$route->station_09}} ⇄ {{$route->station_10}}</p>
-                                    @endif
-                                @endforeach
+                                <h4>{{$track->next_stoppage}}</h4>
                             </div>
 
                         </li>
                         <li class="fare">
                             <div class="bus-txt4">
-                                <h4>BDT 60</h4>
-                                <a class="view" href="#img1">Click to track</a>
+                                <h4>{{$track->updated_at}}</h4>
                             </div>
                         </li>
                         <div class="clearfix"></div>
                     </ul>
                 @endforeach
-
-
-
                 <!--- /ul-first  ---->
             </div>
         </div>
