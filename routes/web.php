@@ -65,6 +65,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/bus/route/store', [BusRouteController::class, 'store'])->name('bus-route.store');
 
     Route::get('/bus/route/tracking-{id}', [BusTrackingController::class, 'track'])->name('bus-route.track');
+    Route::post('/bus/route/tracking-{bus_name}', [BusTrackingController::class, 'update'])->name('bus-route.track.update');
 
 
     Route::middleware('agent')->group(function () {
@@ -87,6 +88,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/feedbacks/manage', [ContactController::class, 'manage'])->name('feedbacks.manage');
         Route::get('/feedbacks/delete/{id}', [ContactController::class, 'delete'])->name('feedbacks.delete');
+
+        Route::post('/bus/route/tracking-{bus_name}', [BusTrackingController::class, 'store'])->name('bus-route.track.add');
     });
 
 });

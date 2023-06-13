@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bus_trackings', function (Blueprint $table) {
             $table->id();
+            $table->string('bus_name');
+            $table->string('organization');
+            $table->string('last_stoppage')->default('-');
+            $table->string('next_stoppage')->default('-');
             $table->timestamps();
         });
     }

@@ -26,7 +26,7 @@
                     <li class="dept"><a href="#">Bus Number</a></li>
                     <li class="arriv"><a href="#">Last Stoppage</a></li>
                     <li class="seat"><a href="#">Next Stoppage</a></li>
-                    <li class="fare"><a href="#">Left at</a></li>
+                    <li class="fare"><a href="#">Left last stoppage at</a></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
