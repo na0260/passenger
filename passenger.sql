@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 13, 2023 at 10:14 PM
+-- Generation Time: Jun 14, 2023 at 07:27 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -142,10 +142,10 @@ INSERT INTO `bus_routes` (`id`, `organization`, `bus_name`, `station_01`, `stati
 
 CREATE TABLE `bus_trackings` (
   `id` bigint UNSIGNED NOT NULL,
-  `bus_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `organization` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_stoppage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
-  `next_stoppage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  `bus_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `organization` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_stoppage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  `next_stoppage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -155,7 +155,7 @@ CREATE TABLE `bus_trackings` (
 --
 
 INSERT INTO `bus_trackings` (`id`, `bus_name`, `organization`, `last_stoppage`, `next_stoppage`, `created_at`, `updated_at`) VALUES
-(1, 'new 2', 'New', 'w', 't', '2023-06-13 21:21:28', '2023-06-13 22:00:50');
+(1, 'new 2', 'New', 'q', 'e', '2023-06-13 21:21:28', '2023-06-14 07:09:27');
 
 -- --------------------------------------------------------
 
