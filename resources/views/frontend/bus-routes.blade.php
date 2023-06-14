@@ -72,7 +72,7 @@
                         </li>
                         <li class="fare">
                             <div class="bus-txt4">
-                                <a class="view" href="#">Bus Details</a>
+                                <a class="view" href="{{route('bus-details')}}">Bus Details</a>
                                 <a class="view" href="{{route('bus.track',$bus->id)}}">Click to track</a>
                             </div>
                         </li>
