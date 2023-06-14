@@ -33,7 +33,7 @@
                 >
                     <h3>FIND MY BUS</h3>
                     <p>All buses route information in one click</p>
-                    <a class="learn" href="{{route('bus-routes')}}">Find Bus</a>
+                    <a class="learn" href="{{route('bus-search')}}">Find Bus</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -56,7 +56,6 @@
                 >
                     <h3>TRACK MY BUS</h3>
                     <p>First of its own kind,bus tracking feature on bus</p>
-                    <a class="learn" href="#">Learn More</a>
                 </div>
                 <div class="clearfix"></div>
             </div>

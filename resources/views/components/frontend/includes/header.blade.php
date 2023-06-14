@@ -76,7 +76,7 @@
                             <li class="{{ Route::currentRouteName() == 'about' ? 'active' : ''}}"><a
                                     href="{{route('about')}}">About</a></li>
                             <li class="{{ Route::currentRouteName() == 'bus-search' ? 'active' : ''}}"><a
-                                    href="{{route('bus-search')}}">Routes</a></li>
+                                    href="{{route('bus-routes')}}">Routes</a></li>
                             <li class="{{ Route::currentRouteName() == 'agent-reg' ? 'active' : ''}}"><a
                                     href="{{route('agent-reg')}}">Agent Registration</a></li>
                             <li class="{{ Route::currentRouteName() == 'privacy' ? 'active' : ''}}"><a

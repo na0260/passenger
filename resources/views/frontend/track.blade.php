@@ -22,11 +22,11 @@
         <div class="bus-btm">
             <div class="container">
                 <ul>
-                    <li class="trav"><a href="#">Bus Name</a></li>
-                    <li class="dept"><a href="#">Bus Number</a></li>
-                    <li class="arriv"><a href="#">Last Stoppage</a></li>
-                    <li class="seat"><a href="#">Next Stoppage</a></li>
-                    <li class="fare"><a href="#">Left last stoppage at</a></li>
+                    <li class="trav" style="width: 20%;"><a href="#">Bus Name</a></li>
+                    <li class="dept" style="width: 20%;"><a href="#">Bus Number</a></li>
+                    <li class="arriv" style="width: 20%;"><a href="#">Last Stoppage</a></li>
+                    <li class="seat" style="width: 20%;"><a href="#">Next Stoppage</a></li>
+                    <li class="fare" style="width: 20%;"><a href="#">Left last stoppage at</a></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -39,14 +39,14 @@
                 <!--- ul-first  ---->
                 @foreach($tracks as $track)
                     <ul class="first">
-                        <li class="trav">
+                        <li class="trav" style="width: 20%;">
                             <div class="bus-txt">
                                 <h4>{{$track->organization}}</h4>
                                 <p>{{$track->bus_name}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </li>
-                        <li class="dept">
+                        <li class="dept" style="width: 20%;">
                             @foreach($buses as $bus)
                                 @if($bus->name == $track->bus_name & $bus->organization == $track->organization)
                                     <div class="bus-txt1">
@@ -56,18 +56,18 @@
                                 @endif
                             @endforeach
                         </li>
-                        <li class="arriv">
+                        <li class="arriv" style="width: 20%;">
                             <div class="bus-txt2">
                                 <h4>{{$track->last_stoppage}}</h4>
                             </div>
                         </li>
-                        <li class="seat">
+                        <li class="seat" style="width: 20%;">
                             <div class="bus-txt3">
                                 <h4>{{$track->next_stoppage}}</h4>
                             </div>
 
                         </li>
-                        <li class="fare">
+                        <li class="fare" style="width: 20%;">
                             <div class="bus-txt4">
                                 <h4>{{$track->updated_at}}</h4>
                             </div>
