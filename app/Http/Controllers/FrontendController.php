@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Bus;
 use App\Models\BusRoute;
 use App\Models\BusTracking;
+use App\Models\Driver;
 use App\Models\Privacy;
 use App\Models\Terms;
 use App\Models\User;
@@ -36,9 +37,11 @@ class FrontendController extends Controller
         return view('frontend.bus-search',['buses'=>$bus]);
     }
 
-    public function bus_details()
+    public function bus_details($id)
     {
-        return view('frontend.bus-details');
+        $bus = Bus::find($id);
+        $driver = Driver::where([['bus_name',$bus->name],['organization',$bus->organization]])->first();
+        return view('frontend.bus-details',['bus'=>$bus,'driver'=>$driver]);
     }
 
     public function track($id)

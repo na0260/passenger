@@ -37,7 +37,7 @@ Route::post('/agent-registration/store', [AgentRequestController::class, 'store'
 Route::post('/contact-us/store', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/bus-routes', [FrontendController::class, 'bus_routes'])->name('bus-routes');
 Route::get('/search-bus', [FrontendController::class, 'bus_search'])->name('bus-search');
-Route::get('/bus-details', [FrontendController::class, 'bus_details'])->name('bus-details');
+Route::get('/bus-details-{id}', [FrontendController::class, 'bus_details'])->name('bus-details');
 Route::post('/search-bus-information', [FrontendController::class, 'search'])->name('search');
 Route::get('/privacy-policy', [FrontendController::class, 'privacy'])->name('privacy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');

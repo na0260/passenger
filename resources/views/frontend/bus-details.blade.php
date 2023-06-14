@@ -16,17 +16,23 @@
                 <h4 class="wow fadeInDown animated animated" data-wow-delay=".5s"
                     style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Bus Information</h4>
                 <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
-                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Name: </p>
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Name: {{$bus->name}}</p>
                 <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
-                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Number: </p>
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Number: {{$bus->number}}</p>
                 <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
-                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Organization: </p>
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Organization: {{$bus->organization}}</p>
                 <h4 class="wow fadeInDown animated animated" data-wow-delay=".5s"
                     style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Driver Information</h4>
                 <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
-                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Name:</p>
+                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Name: {{$driver->name}}</p>
                 <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
-                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Contact Number:</p>
+                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Contact Number: {{$driver->number}}</p>
+                <h4 class="wow fadeInDown animated animated" data-wow-delay=".5s"
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Route Information</h4>
+                <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
+                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">From: {{$bus->start_point}}</p>
+                <p class="wow fadeInDown animated animated" data-wow-delay=".5s"
+                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">To: {{$bus->end_point}}</p>
             </div>
         </div>
         <!--- /privacy ---->
