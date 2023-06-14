@@ -53,11 +53,12 @@ class BusController extends Controller
         if (auth()->user()->type == 'admin'){
             $bus = Bus::all();
             $driver = Driver::all();
+            $track = BusTracking::all();
         }else{
             $bus = Bus::all()->where('organization','=',auth()->user()->organization);
             $driver = Driver::all()->where('organization','=',auth()->user()->organization);
+            $track= BusTracking::all()->where('organization','=',auth()->user()->organization);
         }
-        $user = User::all()->where('type','=','agent');
-        return view('backend.pages.bus.manage',['buses'=>$bus,'drivers'=>$driver]);
+        return view('backend.pages.bus.manage',['buses'=>$bus,'drivers'=>$driver,'tracks'=>$track]);
     }
 }

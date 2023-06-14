@@ -18,7 +18,10 @@
                                     <th>Bus number</th>
                                     <th>Driver Name</th>
                                     <th>Driver Number</th>
+                                    <th>Driver NID</th>
+                                    <th>Driver License</th>
                                     <th>Last Stoppage</th>
+                                    <th>left at.</th>
                                     <th width="5%">Action</th>
                                 </tr>
                                 </thead>
@@ -33,7 +36,9 @@
                                         <td>{{$bus->number}}</td>
                                         @php
                                         $count = 0;
+                                        $count_t = 0;
                                         $size = $drivers->count();
+                                        $size_t = $tracks->count();
                                         @endphp
                                         @foreach($drivers as $driver)
                                             @php
@@ -42,21 +47,38 @@
                                             @if($bus->name == $driver->bus_name & $bus->organization == $driver->organization)
                                                 <td>{{$driver->name}}</td>
                                                 <td>{{$driver->number}}</td>
+                                                <td>{{$driver->nid}}</td>
+                                                <td>{{$driver->driving_license}}</td>
                                                 @break
                                             @endif
                                             @if($count == $size)
                                                 <td>---</td>
                                                 <td>---</td>
+                                                <td>---</td>
+                                                <td>---</td>
                                             @endif
                                         @endforeach
-                                        <td>null</td>
+                                        @foreach($tracks as $track)
+                                            @php
+                                                $count_t++;
+                                            @endphp
+                                            @if($bus->name == $track->bus_name & $bus->organization == $track->organization)
+                                                <td>{{$track->last_stoppage}}</td>
+                                                <td>{{$track->updated_at}}</td>
+                                                @break
+                                            @endif
+                                            @if($count_t == $size_t)
+                                                <td>---</td>
+                                                <td>---</td>
+                                            @endif
+                                        @endforeach
                                         <td>
                                             <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     Action
                                                 </a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="">Edit</a>
-                                                    </li>
+                                                    {{--<li><a class="dropdown-item" href="">Edit</a>
+                                                    </li>--}}
                                                     <li><a class="dropdown-item" href="{{route('bus-route.track',$bus->id)}}">Track</a>
                                                     </li>
                                                 </ul>
@@ -75,7 +97,10 @@
                                     <th>Bus number</th>
                                     <th>Driver Name</th>
                                     <th>Driver Number</th>
+                                    <th>Driver NID</th>
+                                    <th>Driver License</th>
                                     <th>Last Stoppage</th>
+                                    <th>left at.</th>
                                     <th width="5%">Action</th>
                                 </tr>
                                 </tfoot>
