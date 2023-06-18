@@ -29,7 +29,7 @@ input[type="button"],input[type="submit"],li.parallelogram{
 h1,h2,h3,h4,h5,h6{
 	margin:0;
 	font-family: 'Roboto Condensed', sans-serif;
-}	
+}
 p{
 	margin:0;
 }
@@ -225,7 +225,7 @@ button.seabtn {
     transition: all .2s;
     background-repeat: no-repeat;
     background-position: 96% center;
-} 
+}
 button.seabtn:focus,button.seabtn:hover{
     background-color:#1f8dd6;
     outline: 0;
@@ -556,7 +556,7 @@ a.view {
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s;
-    margin-top: 20px;
+    margin-bottom: 20px;
     display: inline-block;
 }
 i.fa.fa-clock-o {
@@ -1296,7 +1296,7 @@ ul.off-mo span {
     color: #999;
     font-weight: 600;
     margin: 0;
-}	
+}
 .selectroom_right h3 {
     font-size: 1.7em;
     font-weight: 600;
@@ -1541,7 +1541,7 @@ button.subbtn:focus, button.subbtn:hover {
 	color:#A9A8A8;
 }
 .login-grids p span{
-	color:#48cfc1;	
+	color:#48cfc1;
 }
 .login-left ul li{
 	list-style-type:none;
@@ -1695,7 +1695,7 @@ button.subbtn:focus, button.subbtn:hover {
 }
 .banner-bottom-grids{
 	margin: 6em 0 0 0;
-}	
+}
 .banner-bottom-grid{
 	text-align:center;
 }
@@ -1774,7 +1774,7 @@ ul.callbacks_tabs.callbacks2_tabs {
 	color:#3F84B1;
 }
 .comments-list ul{
-	padding:1.5em 0 2em; 
+	padding:1.5em 0 2em;
 }
 .comments-list ul li{
 	display:inline-block;
@@ -2133,7 +2133,7 @@ ul.paging{
 .lightbox {
 	/** Hide the lightbox */
 	display: none;
-	
+
 	/** Apply basic lightbox styling */
 	position: fixed;
 	z-index: 9999;
@@ -2177,8 +2177,8 @@ ul.paging{
 	font-size:17px;
 	opacity:0;
 	transition: opacity ease-in-out 0.5s;
-	}	
-	
+	}
+
 .lightbox .content:hover .desc	{
 	opacity:1;
 }
@@ -2195,7 +2195,7 @@ ul.paging{
 .close {
 	float:right;
 	}
-	
+
 	.clear {
 		display:block;
 		clear:both;
@@ -2208,7 +2208,7 @@ ul.set li,ul.set1 li {
 }
 ul.set1{
 	margin-top:2em
-	
+
 }
 p.aval {
     padding-left: 12px;

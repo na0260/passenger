@@ -69,7 +69,7 @@
                         </li>
                         <li class="fare" style="width: 20%;">
                             <div class="bus-txt4">
-                                <h4>{{$track->updated_at}}</h4>
+                                <h4>{{$track->updated_at->format('g:i A')}}</h4>
                             </div>
                         </li>
                         <div class="clearfix"></div>

@@ -24,7 +24,7 @@ class BusTrackingController extends Controller
         $track->next_stoppage = $request->next_stoppage;
         $track->save();
 
-        return redirect()->back()->with('msg'.'Tracking information has been added');
+        return redirect()->back()->with('msg','Tracking information has been Updated');
     }
 
 }

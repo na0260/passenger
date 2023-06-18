@@ -21,6 +21,7 @@
                                     <th>Driver NID</th>
                                     <th>Driver License</th>
                                     <th>Last Stoppage</th>
+                                    <th>Next Stoppage</th>
                                     <th>left at.</th>
                                     <th width="5%">Action</th>
                                 </tr>
@@ -70,10 +71,12 @@
                                             @endphp
                                             @if($bus->name == $track->bus_name & $bus->organization == $track->organization)
                                                 <td>{{$track->last_stoppage}}</td>
+                                                <td>{{$track->next_stoppage}}</td>
                                                 <td>{{$track->updated_at->format('g:i A')}}</td>
                                                 @break
                                             @endif
                                             @if($count_t == $size_t)
+                                                <td>---</td>
                                                 <td>---</td>
                                                 <td>---</td>
                                             @endif
@@ -109,6 +112,7 @@
                                     <th>Driver NID</th>
                                     <th>Driver License</th>
                                     <th>Last Stoppage</th>
+                                    <th>Next Stoppage</th>
                                     <th>left at.</th>
                                     <th width="5%">Action</th>
                                 </tr>

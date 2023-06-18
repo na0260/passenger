@@ -11,7 +11,11 @@
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="FisrtName" class="form-label">Bus Name</label>
-                                    <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="name">
+                                    <input type="text" class="form-control" id="FisrtName" placeholder="Bus name" name="name" required>
+                                    <br>
+                                    @error('name')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 @if(Auth::user()->type == 'admin')
                                     <div class="col-12 col-lg-6">
@@ -22,29 +26,53 @@
                                                 <option value="{{$user->organization}}">{{$user->organization}}</option>
                                             @endforeach
                                         </select>
+                                        <br>
+                                        @error('organization')
+                                        <span class="text-danger">{{$message}}</span><br>
+                                        @enderror
                                     </div>
                                 @endif
                                 <div class="col-12 col-lg-6">
                                     <label for="PhoneNumber" class="form-label">Bus Number</label>
-                                    <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number" name="number">
+                                    <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number" name="number" required>
+                                    <br>
+                                    @error('number')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Start Point</label>
                                     <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter start point" name="start_point">
+                                           placeholder="Enter start point" name="start_point" required>
+                                    <br>
+                                    @error('start_point')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">End Point</label>
                                     <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter end point" name="end_point">
+                                           placeholder="Enter end point" name="end_point" required>
+                                    <br>
+                                    @error('end_point')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Start Time:</label>
-                                    <input type="time" class="form-control" name="start_time">
+                                    <input type="time" class="form-control" name="start_time" required>
+                                    <br>
+                                    @error('start_time')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">End Time:</label>
-                                    <input type="time" class="form-control" name="end_time">
+                                    <input type="time" class="form-control" name="end_time" required>
+                                    <br>
+                                    @error('end_time')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <button type="submit" class="btn btn-primary px-4">ADD</button>
@@ -63,12 +91,16 @@
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="Inputbus" class="form-label">Bus Name</label>
-                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name" required>
                                         <option selected disabled>----- Select bus from below -----</option>
                                         @foreach($buses as $bus)
                                             <option value="{{$bus->name}}">{{$bus->name}}</option>
                                         @endforeach
                                     </select>
+                                    <br>
+                                    @error('bus_name')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 @if(Auth::user()->type == 'admin')
                                     <div class="col-12 col-lg-6">
@@ -79,29 +111,53 @@
                                                 <option value="{{$user->organization}}">{{$user->organization}}</option>
                                             @endforeach
                                         </select>
+                                        <br>
+                                        @error('organization')
+                                        <span class="text-danger">{{$message}}</span><br>
+                                        @enderror
                                     </div>
                                 @endif
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driver Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter driver name" name="name">
+                                    <input type="text" class="form-control" placeholder="Enter driver name" name="name" required>
+                                    <br>
+                                    @error('name')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="" class="form-label">Driver Contact</label>
-                                    <input type="text" class="form-control" placeholder="01XXXXXXXXX" name="number">
+                                    <input type="text" class="form-control" placeholder="01XXXXXXXXX" name="number" required>
+                                    <br>
+                                    @error('number')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
 
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driver NID</label>
-                                    <input type="text" class="form-control" placeholder="Enter driver NID number" name="nid">
+                                    <input type="text" class="form-control" placeholder="Enter driver NID number" name="nid" required>
+                                    <br>
+                                    @error('nid')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Driving Licence no.</label>
-                                    <input type="text" class="form-control" placeholder="Enter driving licence no." name="driving_license">
+                                    <input type="text" class="form-control" placeholder="Enter driving licence no." name="driving_license" required>
+                                    <br>
+                                    @error('driving_license')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <label class="form-label">Driver Address</label>
                                     <textarea class="form-control" placeholder="Enter driver address"
                                               rows="3" name="address"></textarea>
+                                    <br>
+                                    @error('address')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">
@@ -123,12 +179,16 @@
                             <div class="row g-3">
                                 <div class="col-12 col-lg-6">
                                     <label for="Inputbus" class="form-label">Bus Name</label>
-                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name">
+                                    <select class="form-select" id="Inputbus" aria-label="Default select example" name="bus_name" required>
                                         <option selected disabled>----- Select bus from below -----</option>
                                         @foreach($buses as $bus)
                                             <option value="{{$bus->name}}">{{$bus->name}}</option>
                                         @endforeach
                                     </select>
+                                    <br>
+                                    @error('bus_name')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 @if(Auth::user()->type == 'admin')
                                     <div class="col-12 col-lg-6">
@@ -139,47 +199,91 @@
                                                 <option value="{{$user->organization}}">{{$user->organization}}</option>
                                             @endforeach
                                         </select>
+                                        <br>
+                                        @error('organization')
+                                        <span class="text-danger">{{$message}}</span><br>
+                                        @enderror
                                     </div>
                                 @endif
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 1</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_01">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_01" required>
+                                    <br>
+                                    @error('station_01')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 2</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_02">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_02" required>
+                                    <br>
+                                    @error('station_02')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 3</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_03">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_03" required>
+                                    <br>
+                                    @error('station_03')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 4</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_04">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_04" required>
+                                    <br>
+                                    @error('station_04')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 5</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_05">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_05" required>
+                                    <br>
+                                    @error('station_05')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 6</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_06">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_06" required>
+                                    <br>
+                                    @error('station_06')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 7</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_07">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_07" required>
+                                    <br>
+                                    @error('station_07')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 8</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_08">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_08" required>
+                                    <br>
+                                    @error('station_08')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 9</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_09">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_09" required>
+                                    <br>
+                                    @error('station_09')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label class="form-label">Station - 10</label>
-                                    <input type="text" class="form-control" placeholder="Station name" name="station_10">
+                                    <input type="text" class="form-control" placeholder="Station name" name="station_10" required>
+                                    <br>
+                                    @error('station_10')
+                                    <span class="text-danger">{{$message}}</span><br>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex align-items-center gap-3">
