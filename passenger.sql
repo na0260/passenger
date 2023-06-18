@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 14, 2023 at 07:27 AM
+-- Generation Time: Jun 18, 2023 at 12:40 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -94,12 +94,8 @@ CREATE TABLE `buses` (
 --
 
 INSERT INTO `buses` (`id`, `organization`, `name`, `number`, `start_point`, `end_point`, `start_time`, `end_time`, `created_at`, `updated_at`) VALUES
-(1, 'New', 'Bus-1', 'D-XXXX', 'XXX', 'YYY', '06:00', '23:00', '2023-06-05 11:25:58', '2023-06-05 11:25:58'),
-(2, 'test', 'Bus-1', 'DM - 123122', 'X', 'Y', '06:00', '23:00', '2023-06-05 11:33:51', '2023-06-05 11:33:51'),
-(3, 'X transport', 'XBus - 1', 'DM - ka XX-XXXX', 'X', 'Y', '06:00', '23:00', '2023-06-05 12:19:48', '2023-06-05 12:19:48'),
-(4, 'X transport', 'XBus - 2', 'DM - ka XX-XXXY', 'A', 'Z', '06:00', '13:00', '2023-06-05 12:39:08', '2023-06-05 12:39:08'),
-(5, 'New', 'new Bus', 'asAdadsa', 'ASD', 'DSA', '06:00', '06:00', '2023-06-13 21:19:53', '2023-06-13 21:19:53'),
-(6, 'New', 'new 2', 'fgfgf', 'asdasd', 'fdfsdfs', '06:00', '12:06', '2023-06-13 21:21:28', '2023-06-13 21:21:28');
+(1, 'Organization1', 'Organization1-Bus1', 'Dhaka Metro D-XXXX', 'XXX', 'YYY', '06:00', '23:00', '2023-06-18 09:35:20', '2023-06-18 09:35:20'),
+(2, 'Alif Paribahan', 'Alif1', 'Dhaka Metro D-XXXXYY', 'Mirpur 14', 'Nandan Park', '06:00', '23:00', '2023-06-18 10:25:09', '2023-06-18 10:25:09');
 
 -- --------------------------------------------------------
 
@@ -130,9 +126,8 @@ CREATE TABLE `bus_routes` (
 --
 
 INSERT INTO `bus_routes` (`id`, `organization`, `bus_name`, `station_01`, `station_02`, `station_03`, `station_04`, `station_05`, `station_06`, `station_07`, `station_08`, `station_09`, `station_10`, `created_at`, `updated_at`) VALUES
-(1, 'New', 'Bus-1', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', '2023-06-05 12:08:09', '2023-06-05 12:08:09'),
-(2, 'X transport', 'XBus - 1', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '2023-06-05 12:21:30', '2023-06-05 12:21:30'),
-(3, 'New', 'new 2', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '2023-06-13 21:28:03', '2023-06-13 21:28:03');
+(1, 'Organization1', 'Organization1-Bus1', 'XXX', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'YYY', '2023-06-18 10:02:49', '2023-06-18 10:02:49'),
+(2, 'Alif Paribahan', 'Alif1', 'Mirpur 14', 'Sony Cinema Hall', 'Mazar Road', 'Rupnagar', 'Beribadh', 'Birulia', 'Ashulia', 'Zirabo', 'Fantasy Kingdom', 'Nandan Park', '2023-06-18 10:38:42', '2023-06-18 10:38:42');
 
 -- --------------------------------------------------------
 
@@ -155,7 +150,8 @@ CREATE TABLE `bus_trackings` (
 --
 
 INSERT INTO `bus_trackings` (`id`, `bus_name`, `organization`, `last_stoppage`, `next_stoppage`, `created_at`, `updated_at`) VALUES
-(1, 'new 2', 'New', 'q', 'e', '2023-06-13 21:21:28', '2023-06-14 07:09:27');
+(1, 'Organization1-Bus1', 'Organization1', 'XXX', 'A', '2023-06-18 09:35:20', '2023-06-18 10:12:15'),
+(2, 'Alif1', 'Alif Paribahan', 'Rupnagar', 'Beribadh', '2023-06-18 10:25:09', '2023-06-18 10:41:57');
 
 -- --------------------------------------------------------
 
@@ -208,8 +204,8 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`id`, `organization`, `bus_name`, `name`, `number`, `nid`, `driving_license`, `address`, `created_at`, `updated_at`) VALUES
-(1, 'New', 'Bus-1', 'Bus-1 Driver', '01010101011', '121212121212', 'DK-123456DS123', NULL, '2023-06-05 11:53:41', '2023-06-05 11:53:41'),
-(2, 'X transport', 'XBus - 1', 'XDriver', '01000000000', '1111111111', 'DK-123456789', 'XXXX', '2023-06-05 12:20:53', '2023-06-05 12:20:53');
+(1, 'Organization1', 'Organization1-Bus1', 'Driver-1', '01111111112', '111111111111', 'DK-123456DS123', NULL, '2023-06-18 10:00:58', '2023-06-18 10:00:58'),
+(2, 'Alif Paribahan', 'Alif1', 'Driver-1', '01010101011', '121212121212', 'DK-1212DS021', NULL, '2023-06-18 10:37:19', '2023-06-18 10:37:19');
 
 -- --------------------------------------------------------
 
@@ -271,6 +267,13 @@ CREATE TABLE `password_reset_tokens` (
   `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('samjr.008@gmail.com', '$2y$10$10dDt15XrfTLB79tPnCe9eM80Tvw1sk2Zc/MX2je.yNXH8sug2jd.', '2023-06-18 09:24:13');
 
 -- --------------------------------------------------------
 
@@ -365,13 +368,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `type`, `organization`, `email_verified_at`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'test@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$mrCnneJ/v0Hgnt3XKgp6KeDxnVYKSBbtoC1Y9HHk4gIoEFqd9EQtm', 'active', NULL, '2023-05-30 06:39:17', '2023-05-30 06:39:17'),
-(2, 'Test Agent', 'testagent@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$IWElKclUnuYThGIFzvOq7.Qut2AAnqQksbNEBnV4iVucSVWNSlUAK', 'active', NULL, '2023-06-03 19:28:50', '2023-06-03 19:28:50'),
-(3, 'new', 'agent@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$9fO1Ln5zSAX0jX94yoJkWOlOLaGWsi3FwLBS/ZfUh7FCPNy7Y3H7q', 'active', NULL, '2023-06-03 19:31:04', '2023-06-03 19:31:04'),
-(4, 'new 2', 'agentaa@mail.com', '12312312312', 'agent', 'asdasdad', NULL, '$2y$10$v72gulp9BK0dF97goNQP4Oz11900UdA3tRyWPjgBQP70AeJOs/6LW', 'active', NULL, '2023-06-03 19:35:32', '2023-06-03 19:58:59'),
-(5, 'my full name', 'me@mydomain.com', '12312312312', 'agent', 'test', NULL, '$2y$10$LrfJlihXPszvBMGs3/7Jbu9bXCFzRsf9s9Nq4U8TPdD/7ENDViwSq', 'active', NULL, '2023-06-04 10:56:30', '2023-06-04 10:56:30'),
-(6, 'Agent', 'agentmail@mail.com', '01234567890', 'agent', 'New', NULL, '$2y$10$nJwiEU7h/4qWP2EHFYoiL.EeUaKt8fjf2iHEATFGQRAxKUopG3im2', 'active', NULL, '2023-06-04 11:19:21', '2023-06-04 11:19:21'),
-(7, 'AgentX', 'agentx@mail.com', '01700000000', 'agent', 'X transport', NULL, '$2y$10$BBV9eVY.WymXY5MXemvyQevEpE8kAWb8DXBHYvo2EOw5VNGG7Tl4C', 'active', NULL, '2023-06-05 12:10:52', '2023-06-05 12:10:52');
+(1, 'Nur Ahmed', 'samjr.008@gmail.com', NULL, 'admin', NULL, NULL, '$2y$10$7.aVn2AJdcWrIFpE7hhoc.Z77Hec4Do6L7G8G08W94wcgRljsIU9q', 'active', NULL, '2023-06-18 09:23:46', '2023-06-18 09:23:46'),
+(2, 'Admin', 'agent@mail.com', NULL, 'admin', NULL, NULL, '$2y$10$hHdVFKa9RN2jUcBJ4K276.Omu6j9MBnZ8PbwM9ny.2uoQS4XMzRm2', 'active', NULL, '2023-06-18 09:25:17', '2023-06-18 09:25:17'),
+(3, 'Agent1', 'agent1@mail.com', '01111111111', 'agent', 'Organization1', NULL, '$2y$10$QRDLEXJ6Xltd33AvH4pxfOEWu/yPJ.P9BF/Vmyo.MM6/VKUrFihaO', 'active', NULL, '2023-06-18 09:28:16', '2023-06-18 09:28:16'),
+(4, 'Alif1', 'alif1@mail.com', '01234567890', 'agent', 'Alif Paribahan', NULL, '$2y$10$tP4CdLjgFguL2D8xngYyxuJDqZnPxzT6LsKoXRmMmdWyTuuRsuO3e', 'active', NULL, '2023-06-18 10:24:03', '2023-06-18 10:24:03');
 
 --
 -- Indexes for dumped tables
@@ -479,25 +479,25 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `agent__requests`
 --
 ALTER TABLE `agent__requests`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `buses`
 --
 ALTER TABLE `buses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `bus_routes`
 --
 ALTER TABLE `bus_routes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `bus_trackings`
 --
 ALTER TABLE `bus_trackings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -545,7 +545,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
