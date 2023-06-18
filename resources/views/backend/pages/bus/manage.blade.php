@@ -70,7 +70,7 @@
                                             @endphp
                                             @if($bus->name == $track->bus_name & $bus->organization == $track->organization)
                                                 <td>{{$track->last_stoppage}}</td>
-                                                <td>{{$track->updated_at}}</td>
+                                                <td>{{$track->updated_at->format('g:i A')}}</td>
                                                 @break
                                             @endif
                                             @if($count_t == $size_t)

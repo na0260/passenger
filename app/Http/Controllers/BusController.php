@@ -29,7 +29,7 @@ class BusController extends Controller
         $bus = new Bus();
         $track = new BusTracking();
         $bus->name = auth()->user()->organization."-".$request->name;
-        $track->bus_name = $request->name;
+        $track->bus_name = auth()->user()->organization."-".$request->name;
         if (auth()->user()->type == 'admin'){
             $bus->organization = $request->organization;
             $track->organization = $request->organization;
