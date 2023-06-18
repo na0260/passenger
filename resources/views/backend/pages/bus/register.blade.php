@@ -29,11 +29,6 @@
                                     <input type="text" class="form-control" id="PhoneNumber" placeholder="Bus number" name="number">
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <label for="InputEmail" class="form-label">Total stoppage</label>
-                                    <input type="text" class="form-control" id="InputEmail"
-                                           placeholder="Enter total stoppage" name="total_stoppage">
-                                </div>
-                                <div class="col-12 col-lg-6">
                                     <label for="InputEmail" class="form-label">Start Point</label>
                                     <input type="text" class="form-control" id="InputEmail"
                                            placeholder="Enter start point" name="start_point">
