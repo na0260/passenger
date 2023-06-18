@@ -75,7 +75,7 @@
                                     href="{{route('home')}}">Home</a></li>
                             <li class="{{ Route::currentRouteName() == 'about' ? 'active' : ''}}"><a
                                     href="{{route('about')}}">About</a></li>
-                            <li class="{{ Route::currentRouteName() == 'bus-search' ? 'active' : ''}}"><a
+                            <li class="{{ Route::currentRouteName() == 'bus-routes' ? 'active' : ''}}"><a
                                     href="{{route('bus-routes')}}">Routes</a></li>
                             <li class="{{ Route::currentRouteName() == 'agent-reg' ? 'active' : ''}}"><a
                                     href="{{route('agent-reg')}}">Agent Registration</a></li>
