@@ -35,29 +35,35 @@
                                         @endif
                                         <td>{{$bus->number}}</td>
                                         @php
-                                        $count = 0;
-                                        $count_t = 0;
-                                        $size = $drivers->count();
-                                        $size_t = $tracks->count();
+                                            $count = 0;
+                                            $count_t = 0;
+                                            $size = $drivers->count();
+                                            $size_t = $tracks->count();
                                         @endphp
-                                        @foreach($drivers as $driver)
-                                            @php
-                                            $count++;
-                                            @endphp
-                                            @if($bus->name == $driver->bus_name & $bus->organization == $driver->organization)
-                                                <td>{{$driver->name}}</td>
-                                                <td>{{$driver->number}}</td>
-                                                <td>{{$driver->nid}}</td>
-                                                <td>{{$driver->driving_license}}</td>
-                                                @break
-                                            @endif
-                                            @if($count == $size)
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            @endif
-                                        @endforeach
+                                        @if($size == 0)
+                                            <td>---</td>
+                                            <td>---</td>
+                                            <td>---</td>
+                                            <td>---</td>
+                                        @else
+                                            @foreach($drivers as $driver)
+                                                @if($bus->name == $driver->bus_name & $bus->organization == $driver->organization)
+                                                    <td>{{$driver->name}}</td>
+                                                    <td>{{$driver->number}}</td>
+                                                    <td>{{$driver->nid}}</td>
+                                                    <td>{{$driver->driving_license}}</td>
+                                                @endif
+                                                @if($size == $count)
+                                                    <td>---</td>
+                                                    <td>---</td>
+                                                    <td>---</td>
+                                                    <td>---</td>
+                                                @endif
+                                                @php
+                                                    $count++;
+                                                @endphp
+                                            @endforeach
+                                        @endif
                                         @foreach($tracks as $track)
                                             @php
                                                 $count_t++;
@@ -73,13 +79,16 @@
                                             @endif
                                         @endforeach
                                         <td>
-                                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                                                             role="button" data-bs-toggle="dropdown"
+                                                                             aria-expanded="false">
                                                     Action
                                                 </a>
                                                 <ul class="dropdown-menu">
                                                     {{--<li><a class="dropdown-item" href="">Edit</a>
                                                     </li>--}}
-                                                    <li><a class="dropdown-item" href="{{route('bus-route.track',$bus->id)}}">Track</a>
+                                                    <li><a class="dropdown-item"
+                                                           href="{{route('bus-route.track',$bus->id)}}">Track</a>
                                                     </li>
                                                 </ul>
                                             </li>
